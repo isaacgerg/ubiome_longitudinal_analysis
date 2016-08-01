@@ -5,4 +5,4 @@ Genus Heatmap
 
 ![Alt text](http://l1.picsurge.com/kuCuOJ/giCBSbD1qk.jpg "Genus Heatmap")
 
-
+![Alt text](http://l1.picsurge.com/kuCuOJ/YaK5RiN829.jpg "Phyla Distrbution")
