@@ -221,7 +221,15 @@ def stackplotTest():
     plt.xlabel('Sample Number'); plt.grid(False)
     plt.title('Genus Almplot\nGain = Blue, Loss = Red')
     plt.savefig(os.path.join(baseDir, 'genus almplot.png'))
-    plt.close()    
+    plt.close()  
+    
+    # number of genii counts
+    plt.clf()
+    plt.plot(rr, np.sum(r,axis=0))
+    plt.title('Percent of Genii Identified in Sample')
+    plt.xlabel('Sample Date')
+    plt.ylim([0, np.sum(r,axis=0).max()])
+    plt.savefig(os.path.join(baseDir, 'percent of genii identified.png'))      
                 
 
     # fetch list from URL
@@ -366,7 +374,8 @@ def stackplotTest():
     for k in range(N):
         for kk in species:
             r.append(p[kk][k])
-    r = np.reshape(r, (len(species), N), order='F')    
+    r = np.reshape(r, (len(species), N), order='F')   
+    
 
     # Show pathogens
     #Download list from wikipedia
