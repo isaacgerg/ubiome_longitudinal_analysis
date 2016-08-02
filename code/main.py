@@ -22,9 +22,9 @@ def stackplotTest():
     import json
     
     # get list of phyla
-    baseDir = r'C:\Users\idg101\Desktop\New Folder'
+    baseDir = r'C:\Users\Isaac\Desktop\github\ubiome\ubiome_longitudinal_analysis\sample_data'
         
-    fn = glob.glob(os.path.join(r'C:\Users\idg101\Desktop\New Folder','*.json'))
+    fn = glob.glob(os.path.join(r'C:\Users\Isaac\Desktop\github\ubiome\ubiome_longitudinal_analysis\sample_data','*.json'))
     
     # Sort files by time
     samplingTime = []
@@ -115,47 +115,7 @@ def stackplotTest():
     plt.legend(phyla)
     plt.savefig(os.path.join(baseDir, 'phyla percent of sample.png'))    
     
-    # Pull all class
-    cls = []
-    for f in fn:
-        r = open(f).read()
-        o = json.loads(r)
-        lst = o['ubiome_bacteriacounts']
-        for k in lst:
-            if k['tax_rank'] == 'class':
-                cls.append(k['tax_name'])
 
-    cls = sorted(list(set(cls)))    
-
-
-    # Get counts for each species from each dataset
-    N = len(fn)
-    p = {}
-    for k in cls:
-        p[k] = np.zeros(N)
-        c = 0
-        for f in fn:
-            r = open(f).read()
-            lst = json.loads(r)['ubiome_bacteriacounts'] 
-            for kk in lst:
-                if kk['tax_rank'] == 'class' and kk['tax_name'] == k:
-                    p[kk['tax_name']][c] =  kk['count_norm']/10000
-            c += 1        
-    
-    r = []
-    for k in range(N):
-        for kk in cls:
-            r.append(p[kk][k])
-    r = np.reshape(r, (len(cls), N), order='F')    
-    
-    plt.clf()
-    plt.stackplot(rr, r)
-    plt.legend(cls)
-    plt.ylim([0,100])
-    plt.title('Class Percent of Sample, Stacked')
-    plt.ylabel('Percent of Sample')
-    plt.xlabel('Date')
-    plt.savefig(os.path.join(baseDir, 'class percent of sample - stacked.png'))    
     
     allData = {}
     for f in fn:
@@ -348,7 +308,16 @@ def stackplotTest():
     plt.title('Simpsons Diversity Index - (from Family)')
     plt.xlabel('Sample Date')
     plt.ylim([0,1])
-    plt.savefig(os.path.join(baseDir, 'simpsons diversity index.png'))    
+    plt.savefig(os.path.join(baseDir, 'simpsons diversity index.png'))     
+    
+    plt.clf()
+    plt.stackplot(rr, r)
+    plt.legend(cls)
+    plt.ylim([0,100])
+    plt.title('Family Percent of Sample, Stacked')
+    plt.ylabel('Percent of Sample')
+    plt.xlabel('Date')
+    plt.savefig(os.path.join(baseDir, 'family percent of sample - stacked.png'))        
             
     # Pull all species
     species = []
@@ -392,19 +361,7 @@ def stackplotTest():
     for k in range(N):
         for kk in species:
             r.append(p[kk][k])
-    r = np.reshape(r, (len(species), N), order='F')
-    
-    plt.clf()
-    plt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cmap('Blues', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); plt.colorbar()
-    plt.yticks(np.arange(r.shape[0]), species, size='xx-small')
-    plt.xlabel('Sample Number'); plt.grid(False)
-    plt.title('Species Heatmap [Percent]')
-    #plt.savefig(os.path.join(baseDir, 'genus heatmap.png'))    
-    #plt.imshow(r, aspect='auto'); plt.colorbar()
-    #plt.yticks(np.arange(r.shape[0]), species, size='x-small')
-    #plt.xlabel('Sample Number')
-    plt.savefig(os.path.join(baseDir, 'species heatmap.png'))   
-    plt.close()
+    r = np.reshape(r, (len(species), N), order='F')    
 
     # Show pathogens
     #Download list from wikipedia
@@ -470,33 +427,15 @@ def stackplotTest():
     plt.plot(rr, np.sum(r,axis=0))
     plt.title('Percent of Species Identified in Sample')
     plt.xlabel('Sample Date')
+    plt.ylim([0, np.sum(r,axis=0).max()])
     plt.savefig(os.path.join(baseDir, 'percent of species identified.png'))
-
-
-    def fnx():
-        return np.random.randint(5, 50, 7)
     
-    y = np.row_stack((fnx(), fnx(), fnx()))
-    xx = np.arange(7)**2
-    x = []
-    for k in xx:
-        x.append(datetime.datetime(2016,1,1, minute=k+1))
-    
-    y1, y2, y3 = fnx(), fnx(), fnx()
-    
-    fig, ax = plt.subplots()
-    ax.stackplot(x, y)
-    plt.show()
-    
-    fig, ax = plt.subplots()
-    ax.stackplot(x, y1, y2, y3)
-    plt.show()
     return
 
 if __name__ == "__main__":
     # https://raw.githubusercontent.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/master/styles/matplotlibrc
     #matplotlib.style.use('https://raw.githubusercontent.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/master/styles/matplotlibrc')
-    matplotlib.style.use(r'D:\ASASINATR\python\matplotlibrc')
+    matplotlib.style.use('https://raw.githubusercontent.com/isaacgerg/matplotlibrc/master/matplotlibrc.txt')
     
     stackplotTest()
    
