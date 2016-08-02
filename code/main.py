@@ -2,29 +2,29 @@ import glob
 import os
 import sys
 import csv
+import json
 
 import numpy as np
 import scipy as sp
 import scipy.signal
 
 import matplotlib
-
 import matplotlib.pyplot as plt
-import matplotlib
 
-
+import datetime
+from cycler import cycler
+    
+    
 def stackplotTest():
-    import numpy as np
-    import matplotlib.pyplot as plt
-    import datetime
-    from cycler import cycler
+
     
-    import json
+    #---------------------------------------------------------------------------
+    # Directory of where your json files are
+    baseDir = r'C:\Users\idg101\Desktop\New folder\repo\ubiome_longitudinal_analysis\sample_data'
+    #---------------------------------------------------------------------------
     
-    # get list of phyla
-    baseDir = r'C:\Users\Isaac\Desktop\github\ubiome\ubiome_longitudinal_analysis\sample_data'
-        
-    fn = glob.glob(os.path.join(r'C:\Users\Isaac\Desktop\github\ubiome\ubiome_longitudinal_analysis\sample_data','*.json'))
+    # Get all applicable files
+    fn = glob.glob(os.path.join(baseDir,'*.json'))
     
     # Sort files by time
     samplingTime = []
@@ -88,8 +88,13 @@ def stackplotTest():
     
     phyla = [ phyla[i] for i in order]
 
-    plt.stackplot(rr, r)
-    plt.legend(phyla)
+    # ----------------------------------
+    # Phyla-level plots
+    # ----------------------------------
+    # Stack plot
+    plt.stackplot(rr, r)    
+    #plt.legend(phyla)
+    plt.legend(phyla, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     plt.ylim([0,100])
     plt.title('Phyla Percent of Sample, Stacked')
     plt.ylabel('Percent of Sample')
@@ -105,16 +110,16 @@ def stackplotTest():
     plt.plot(rr, r[fIdx,:] / r[bIdx,:]);
     plt.savefig(os.path.join(baseDir, 'Firmicutes to Bacteroidetes Ratio.png'))
     
-    #  version
+    # Phyla percent
     plt.clf()
     plt.plot(rr, r.T);
     plt.title('Phyla Percent of Sample')
     plt.ylabel('Percent of Sample')
     plt.xlabel('Date')
     plt.ylim([0,100])
-    plt.legend(phyla)
+    plt.legend(phyla, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     plt.savefig(os.path.join(baseDir, 'phyla percent of sample.png'))    
-    
+    # ----------------------------------
 
     
     allData = {}
@@ -157,7 +162,6 @@ def stackplotTest():
                         family = allData[tmp]['tax_name']
                         break    
                 genii.append(phylum +'-'+ family + '-'+ k['tax_name'])
-                #genii.append(k['tax_name'])
 
     genii = sorted(list(set(genii)))    
     
@@ -184,7 +188,8 @@ def stackplotTest():
     c.append(p['Firmicutes-Leuconostocaceae-Leuconostoc'])
     c.append(p['Firmicutes-Streptococcaceae-Lactococcus'])
     plt.stackplot(rr, c)
-    plt.legend(['Actinobacteria-Bifidobacteriaceae-Bifidobacterium', 'Firmicutes-Lactobacillaceae-Lactobacillus', 'Firmicutes-Leuconostocaceae-Leuconostoc', 'Firmicutes-Streptococcaceae-Lactococcus'])
+    plt.legend(['Actinobacteria-Bifidobacteriaceae-Bifidobacterium', 'Firmicutes-Lactobacillaceae-Lactobacillus', 'Firmicutes-Leuconostocaceae-Leuconostoc', 'Firmicutes-Streptococcaceae-Lactococcus'], \
+               bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     plt.xlabel('Sample Date')
     plt.savefig(os.path.join(baseDir, 'Percentage of Probiotic Strains.png'))
     
@@ -257,7 +262,7 @@ def stackplotTest():
     plt.title('Gram +/-')
     plt.stackplot(rr, np.row_stack((gp,gn,gu)));
     plt.xlabel('Sample Date')
-    plt.legend(['Gram+', 'Gram-', 'Gram Unknown'])
+    plt.legend(['Gram+', 'Gram-', 'Gram Unknown'], bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     plt.savefig(os.path.join(baseDir, 'gram pos neg - stacked.png'))
     
     r = []
@@ -312,7 +317,7 @@ def stackplotTest():
     
     plt.clf()
     plt.stackplot(rr, r)
-    plt.legend(cls)
+    plt.legend(family, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     plt.ylim([0,100])
     plt.title('Family Percent of Sample, Stacked')
     plt.ylabel('Percent of Sample')
@@ -390,7 +395,7 @@ def stackplotTest():
         c.append(p[k])
     plt.stackplot(rr, c)
     plt.xlabel('Sample Date')
-    plt.legend(pathogenicStrains)
+    plt.legend(pathogenicStrains, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     plt.savefig(os.path.join(baseDir, 'pathogenic strains - stacked.png'))
     
 
@@ -405,7 +410,7 @@ def stackplotTest():
     plt.ylabel('Percent of Sample')
     plt.xlabel('Date')
     plt.ylim([0,np.sum(rsub,axis=0).max()]); #plt.yscale('log')
-    plt.legend(leg[::-1])
+    plt.legend(leg[::-1], bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     plt.savefig(os.path.join(baseDir, 'top 10 species percent of sample - stacked.png'))
     
     # SHow the least dominate 10 species
@@ -419,7 +424,7 @@ def stackplotTest():
     plt.ylabel('Percent of Sample')
     plt.xlabel('Date')
     plt.ylim([0,np.sum(rsub,axis=0).max()]); #plt.yscale('log')
-    plt.legend(leg[::-1])
+    plt.legend(leg[::-1], bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     plt.savefig(os.path.join(baseDir, 'bottom 10 species percent of sample - stacked.png'))
     
     # number of species counts
