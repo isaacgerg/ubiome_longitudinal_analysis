@@ -5,3 +5,4 @@
 ##################################################################
 [project attributes]
 proj.file-type = 'shared'
+proj.main-file = loc('main.py')

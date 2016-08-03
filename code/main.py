@@ -20,7 +20,7 @@ def stackplotTest():
     
     #---------------------------------------------------------------------------
     # Directory of where your json files are
-    baseDir = r'C:\Users\idg101\Desktop\New folder\repo\ubiome_longitudinal_analysis\sample_data'
+    baseDir = r'..\sample_data'
     #---------------------------------------------------------------------------
     
     # Get all applicable files
@@ -212,6 +212,14 @@ def stackplotTest():
     plt.title('Genus Heatmap [Percent]')
     plt.savefig(os.path.join(baseDir, 'genus heatmap.png'))
     plt.close()
+    
+    plt.clf() 
+    plt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cmap('viridis', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); plt.colorbar()
+    plt.yticks(np.arange(r.shape[0]), genii, size='xx-small')
+    plt.xlabel('Sample Number'); plt.grid(False)
+    plt.title('Genus Heatmap [Percent]')
+    plt.savefig(os.path.join(baseDir, 'genus heatmap - viridis.png'))
+    plt.close()    
     
     plt.clf()
     almPlot = r - np.median(r, axis=1).reshape(r.shape[0],1)
