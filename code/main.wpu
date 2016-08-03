@@ -4,10 +4,7 @@
 # Wing IDE project file : User-specific branch                   #
 ##################################################################
 [user attributes]
-debug.breakpoints = {loc('main.py'): {216: (0,
-        None,
-        1,
-        0)}}
+debug.err-values = {loc('main.py'): {}}
 debug.show-args-dialog = {loc('main.py'): False}
 guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                             'windows': [{'name': 'FUG9HETtQ99nDcbNyQc7IRE5HP'\
@@ -53,7 +50,7 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                                {})],
                  'primary_view_state': {'area': 'wide',
         'constraint': None,
-        'current_pages': [3,
+        'current_pages': [1,
                           1],
         'notebook_display': 'normal',
         'notebook_percent': 0.3668831168831169,
@@ -104,7 +101,7 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                                        'fRegexFlags': 46,
                                        'fReplaceText': '',
                                        'fReverse': False,
-                                       'fSearchText': u'genus heat',
+                                       'fSearchText': u'identified',
                                        'fStartPos': 0,
                                        'fStyle': 'text',
                                        'fWholeWords': False,
@@ -147,7 +144,7 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
         -1,
         -1),
                        'attrib-starts': [],
-                       'first-line': 64,
+                       'first-line': 225,
                        'folded-linenos': [],
                        'history': {u'file:c:/Users/Isaac/Desktop/github/ubiome/ubiome_longitudinal_analysis/code/main.py': ['f'\
         'amily\n',
@@ -158,7 +155,6 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
         'os.path.curdir\n',
         'os.path.abspath(os.path.curdir)\n',
         "matplotlib.cm.get_cmap('Blues', 9)\n",
-        "tmp = matplotlib.cm.get_cmap('viridis', 9)\n",
         "plt.clf()\ncolormap = matplotlib.cm.get_cmap('viridis', 9)\nbounds="\
         "np.linspace(r.min(), r.max(), 9)\nnorm = colors.BoundaryNorm(bounds"\
         ", cmap.N)    \nplt.matshow(r, aspect='auto', cmap=colormap, norm=no"\
@@ -188,12 +184,91 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
         "e Number'); plt.grid(False)\nplt.title('Genus Heatmap [Percent]')\n"\
         "plt.savefig(os.path.join(baseDir, 'genus heatmap - viridis.png'))\n"\
         "plt.close()\n\n",
-        "matplotlib.cm.get_cmap('viridis', 9)\n"]},
+        "matplotlib.cm.get_cmap('viridis', 9)\n",
+        'tmp.colors\n',
+        "tmp = matplotlib.cm.get_cmap('Blues', 9)\n",
+        'tmp\n',
+        "tmp = matplotlib.cm.get_cmap('viridis', 9)\n",
+        'tmp.N\n',
+        'tmp.name\n',
+        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
+        "ap('viridis'), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100));"\
+        " plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='xx-"\
+        "small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title('G"\
+        "enus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'genus "\
+        "heatmap - viridis.png'))\nplt.close()\n\n",
+        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
+        "ap('afmhot'), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); "\
+        "plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='xx-s"\
+        "mall')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title('Ge"\
+        "nus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'genus h"\
+        "eatmap - viridis.png'))\nplt.close()\n\n",
+        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
+        "ap('pubugn'), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); "\
+        "plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='xx-s"\
+        "mall')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title('Ge"\
+        "nus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'genus h"\
+        "eatmap - viridis.png'))\nplt.close()\n\n",
+        "''\n",
+        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
+        "ap('PuBuGn'), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); "\
+        "plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='xx-s"\
+        "mall')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title('Ge"\
+        "nus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'genus h"\
+        "eatmap - viridis.png'))\nplt.close()\n\n",
+        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
+        "ap('PuBuGn', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)"\
+        "); plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='x"\
+        "x-small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title("\
+        "'Genus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'genu"\
+        "s heatmap - viridis.png'))\nplt.close()\n\n",
+        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
+        "ap('Paired', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)"\
+        "); plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='x"\
+        "x-small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title("\
+        "'Genus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'genu"\
+        "s heatmap - viridis.png'))\nplt.close()\n\n",
+        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
+        "ap('Set1', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100));"\
+        " plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='xx-"\
+        "small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title('G"\
+        "enus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'genus "\
+        "heatmap - alt colormap.png'))\nplt.close()\n\n",
+        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
+        "ap('YlGnBu', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)"\
+        "); plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='x"\
+        "x-small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title("\
+        "'Genus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'genu"\
+        "s heatmap - alt colormap.png'))\nplt.close()\n\n",
+        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
+        "ap('inferno', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100"\
+        ")); plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='"\
+        "xx-small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title"\
+        "('Genus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'gen"\
+        "us heatmap - alt colormap.png'))\nplt.close()\n\n",
+        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
+        "ap('ocean', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100))"\
+        "; plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='xx"\
+        "-small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title('"\
+        "Genus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'genus"\
+        " heatmap - alt colormap.png'))\nplt.close()\n\n",
+        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
+        "ap('cubehelix', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=1"\
+        "00)); plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size"\
+        "='xx-small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.tit"\
+        "le('Genus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'g"\
+        "enus heatmap - alt colormap.png'))\nplt.close()\n\n",
+        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
+        "ap('cubehelix_r', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax"\
+        "=100)); plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, si"\
+        "ze='xx-small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.t"\
+        "itle('Genus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, "\
+        "'genus heatmap - alt colormap.png'))\nplt.close()\n\n"]},
                        'launch-id': None,
-                       'sel-line': 78,
-                       'sel-line-start': 4356,
-                       'selection_end': 4356,
-                       'selection_start': 4356}),
+                       'sel-line': 239,
+                       'sel-line-start': 21584,
+                       'selection_end': 21584,
+                       'selection_start': 21584}),
                      ('debug-watch',
                       'wide',
                       1,
@@ -234,84 +309,14 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                       {})],
         'primary_view_state': {'editor_states': ({'bookmarks': ([[loc('main.py'),
         {'attrib-starts': [('stackplotTest',
-                            15)],
-         'first-line': 46,
+                            17)],
+         'first-line': 135,
          'folded-linenos': [],
-         'sel-line': 117,
-         'sel-line-start': 3369,
-         'selection_end': 3369,
-         'selection_start': 3369},
-        1470101721.535],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             15)],
-          'first-line': 108,
-          'folded-linenos': [],
-          'sel-line': 136,
-          'sel-line-start': 3897,
-          'selection_end': 3929,
-          'selection_start': 3923},
-         1470101723.653],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             15)],
-          'first-line': 122,
-          'folded-linenos': [],
-          'sel-line': 140,
-          'sel-line-start': 4054,
-          'selection_end': 4076,
-          'selection_start': 4070},
-         1470101724.369],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             15)],
-          'first-line': 133,
-          'folded-linenos': [],
-          'sel-line': 151,
-          'sel-line-start': 4478,
-          'selection_end': 4508,
-          'selection_start': 4502},
-         1470101724.665],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             15)],
-          'first-line': 133,
-          'folded-linenos': [],
-          'sel-line': 153,
-          'sel-line-start': 4550,
-          'selection_end': 4608,
-          'selection_start': 4602},
-         1470101725.001],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             15)],
-          'first-line': 133,
-          'folded-linenos': [],
-          'sel-line': 156,
-          'sel-line-start': 4693,
-          'selection_end': 4723,
-          'selection_start': 4717},
-         1470101725.201],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             15)],
-          'first-line': 133,
-          'folded-linenos': [],
-          'sel-line': 158,
-          'sel-line-start': 4787,
-          'selection_end': 4835,
-          'selection_start': 4829},
-         1470101725.52],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             17)],
-          'first-line': 135,
-          'folded-linenos': [],
-          'sel-line': 140,
-          'sel-line-start': 4208,
-          'selection_end': 4246,
-          'selection_start': 4241},
-         1470188653.069],
+         'sel-line': 140,
+         'sel-line-start': 4208,
+         'selection_end': 4246,
+         'selection_start': 4241},
+        1470188653.069],
         [loc('main.py'),
          {'attrib-starts': [('stackplotTest',
                              17)],
@@ -438,7 +443,79 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
           'sel-line-start': 13600,
           'selection_end': 13600,
           'selection_start': 13600},
-         1470189374.232]],
+         1470189374.232],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             17)],
+          'first-line': 198,
+          'folded-linenos': [],
+          'sel-line': 215,
+          'sel-line-start': 7329,
+          'selection_end': 7729,
+          'selection_start': 7329},
+         1470189883.908],
+        [loc('../../../../../../../Python34/Lib/site-packages/matplotlib/cm.py'),
+         {'attrib-starts': [('get_cmap',
+                             137)],
+          'first-line': 136,
+          'folded-linenos': [],
+          'sel-line': 165,
+          'sel-line-start': 4796,
+          'selection_end': 4796,
+          'selection_start': 4796},
+         1470189891.043],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             17)],
+          'first-line': 198,
+          'folded-linenos': [],
+          'sel-line': 215,
+          'sel-line-start': 7329,
+          'selection_end': 7738,
+          'selection_start': 7329},
+         1470190239.803],
+        [loc('../../../../../../../Python34/Lib/site-packages/matplotlib/colors.py'),
+         {'attrib-starts': [('ColorConverter',
+                             242),
+                            ('ColorConverter.to_rgba',
+                             333)],
+          'first-line': 346,
+          'folded-linenos': [],
+          'sel-line': 375,
+          'sel-line-start': 13600,
+          'selection_end': 13600,
+          'selection_start': 13600},
+         1470190245.783],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             17)],
+          'first-line': 208,
+          'folded-linenos': [],
+          'sel-line': 236,
+          'sel-line-start': 8324,
+          'selection_end': 8366,
+          'selection_start': 8356},
+         1470191153.482],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             17)],
+          'first-line': 221,
+          'folded-linenos': [],
+          'sel-line': 238,
+          'sel-line-start': 8411,
+          'selection_end': 8431,
+          'selection_start': 8431},
+         1470191160.541],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             17)],
+          'first-line': 221,
+          'folded-linenos': [],
+          'sel-line': 239,
+          'sel-line-start': 8435,
+          'selection_end': 8501,
+          'selection_start': 8491},
+         1470191161.031]],
         20),
         'current-loc': loc('main.py'),
         'editor-state-list': [(loc('../../../../../../../Python34/Lib/site-packages/matplotlib/colors.py'),
@@ -462,12 +539,12 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                               (loc('main.py'),
                                {'attrib-starts': [('stackplotTest',
         17)],
-                                'first-line': 198,
+                                'first-line': 421,
                                 'folded-linenos': [],
-                                'sel-line': 216,
-                                'sel-line-start': 7345,
-                                'selection_end': 7420,
-                                'selection_start': 7384})],
+                                'sel-line': 451,
+                                'sel-line-start': 15868,
+                                'selection_end': 15888,
+                                'selection_start': 15888})],
         'has-focus': True,
         'locked': False},
         [loc('../../../../../../../Python34/Lib/site-packages/matplotlib/colors.py'),
@@ -495,10 +572,10 @@ proj.build-cmd = {None: ('default',
                          None)}
 proj.env-vars = {None: ('default',
                         [u''])}
-search.search-history = [u'genus heat',
+search.search-history = [u'identified',
+                         u'genus heat',
                          u'genus',
                          u'family',
-                         u'identified',
                          u'show()',
                          u'class percent',
                          u'species heatmap']

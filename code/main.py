@@ -214,12 +214,12 @@ def stackplotTest():
     plt.close()
     
     plt.clf() 
-    plt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cmap('viridis', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); plt.colorbar()
+    plt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cmap('cubehelix_r', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); plt.colorbar()
     plt.yticks(np.arange(r.shape[0]), genii, size='xx-small')
     plt.xlabel('Sample Number'); plt.grid(False)
     plt.title('Genus Heatmap [Percent]')
-    plt.savefig(os.path.join(baseDir, 'genus heatmap - viridis.png'))
-    plt.close()    
+    plt.savefig(os.path.join(baseDir, 'genus heatmap - alt colormap.png'))
+    plt.close()
     
     plt.clf()
     almPlot = r - np.median(r, axis=1).reshape(r.shape[0],1)
@@ -236,7 +236,7 @@ def stackplotTest():
     plt.plot(rr, np.sum(r,axis=0))
     plt.title('Percent of Genii Identified in Sample')
     plt.xlabel('Sample Date')
-    plt.ylim([0, np.sum(r,axis=0).max()])
+    plt.ylim([0, 100])
     plt.savefig(os.path.join(baseDir, 'percent of genii identified.png'))      
                 
 
@@ -449,7 +449,7 @@ def stackplotTest():
     plt.plot(rr, np.sum(r,axis=0))
     plt.title('Percent of Species Identified in Sample')
     plt.xlabel('Sample Date')
-    plt.ylim([0, np.sum(r,axis=0).max()])
+    plt.ylim([0, 100])
     plt.savefig(os.path.join(baseDir, 'percent of species identified.png'))
     
     return
