@@ -4,16 +4,12 @@
 # Wing IDE project file : User-specific branch                   #
 ##################################################################
 [user attributes]
-debug.breakpoints = {loc('main.py'): {373: (0,
-        None,
-        1,
-        0)}}
 debug.err-values = {loc('main.py'): {}}
 debug.show-args-dialog = {loc('main.py'): False}
 guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                             'windows': [{'name': 'FUG9HETtQ99nDcbNyQc7IRE5HP'\
         'W2zRze',
-        'size-state': '',
+        'size-state': 'maximized',
         'type': 'dock',
         'view': {'area': 'tall',
                  'constraint': None,
@@ -54,8 +50,8 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                                {})],
                  'primary_view_state': {'area': 'wide',
         'constraint': None,
-        'current_pages': [3,
-                          1],
+        'current_pages': [1,
+                          0],
         'notebook_display': 'normal',
         'notebook_percent': 0.3668831168831169,
         'override_title': None,
@@ -105,7 +101,7 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                                        'fRegexFlags': 46,
                                        'fReplaceText': '',
                                        'fReverse': False,
-                                       'fSearchText': u'family',
+                                       'fSearchText': u'mds',
                                        'fStartPos': 0,
                                        'fStyle': 'text',
                                        'fWholeWords': False,
@@ -148,252 +144,41 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
         -1,
         -1),
                        'attrib-starts': [],
-                       'first-line': 1273,
+                       'first-line': 60,
                        'folded-linenos': [],
-                       'history': {u'file:c:/Users/Isaac/Desktop/github/ubiome/ubiome_longitudinal_analysis/code/main.py': ['f'\
-        'amily\n',
-        "plt.clf()\nplt.stackplot(rr, r)\nplt.legend(family)\nplt.ylim([0,10"\
-        "0])\nplt.title('Family Percent of Sample, Stacked')\nplt.ylabel('Pe"\
-        "rcent of Sample')\nplt.xlabel('Date')\nplt.savefig(os.path.join(bas"\
-        "eDir, 'family percent of sample - stacked.png'))\n\n",
-        'os.path.curdir\n',
-        'os.path.abspath(os.path.curdir)\n',
-        "matplotlib.cm.get_cmap('Blues', 9)\n",
-        "plt.clf()\ncolormap = matplotlib.cm.get_cmap('viridis', 9)\nbounds="\
-        "np.linspace(r.min(), r.max(), 9)\nnorm = colors.BoundaryNorm(bounds"\
-        ", cmap.N)    \nplt.matshow(r, aspect='auto', cmap=colormap, norm=no"\
-        "rm, matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); plt.colorbar()"\
-        "\nplt.yticks(np.arange(r.shape[0]), genii, size='xx-small')\nplt.xl"\
-        "abel('Sample Number'); plt.grid(False)\nplt.title('Genus Heatmap [P"\
-        "ercent]')\nplt.savefig(os.path.join(baseDir, 'genus heatmap - virid"\
-        "is.png'))\nplt.close()\n\n",
-        "colormap = matplotlib.cm.get_cmap('viridis', 9)\n",
-        'bounds=np.linspace(r.min(), r.max(), 9)\n',
-        'norm = colors.BoundaryNorm(bounds, colormap.N)    \n',
-        'norm = matplotlib.colors.BoundaryNorm(bounds, colormap.N)   \n',
-        "plt.matshow(r, aspect='auto', cmap=colormap, norm=norm, matplotlib."\
-        "colors.LogNorm(vmin=0.1, vmax=100)); plt.colorbar()\nplt.yticks(np."\
-        "arange(r.shape[0]), genii, size='xx-small')\nplt.xlabel('Sample Num"\
-        "ber'); plt.grid(False)\nplt.title('Genus Heatmap [Percent]')\nplt.s"\
-        "avefig(os.path.join(baseDir, 'genus heatmap - viridis.png'))\nplt.c"\
-        "lose()\n\n",
-        "plt.matshow(r, aspect='auto', cmap=colormap, norm=norm, matplotlib."\
-        "colors.LogNorm(vmin=0.1, vmax=100)); plt.colorbar()\n",
-        "plt.matshow(r, aspect='auto', cmap=colormap, norm=norm, matplotlib."\
-        "colors.LogNorm(vmin=0.1, vmax=100)); \n",
-        "plt.clf()\ncolormap = matplotlib.cm.get_cmap('viridis', 9) \nplt.ma"\
-        "tshow(r, aspect='auto', cmap=colormap, interpolation='None', matplo"\
-        "tlib.colors.LogNorm(vmin=0.1, vmax=100)); plt.colorbar()\nplt.ytick"\
-        "s(np.arange(r.shape[0]), genii, size='xx-small')\nplt.xlabel('Sampl"\
-        "e Number'); plt.grid(False)\nplt.title('Genus Heatmap [Percent]')\n"\
-        "plt.savefig(os.path.join(baseDir, 'genus heatmap - viridis.png'))\n"\
-        "plt.close()\n\n",
-        "matplotlib.cm.get_cmap('viridis', 9)\n",
-        'tmp.colors\n',
-        "tmp = matplotlib.cm.get_cmap('Blues', 9)\n",
-        'tmp\n',
-        "tmp = matplotlib.cm.get_cmap('viridis', 9)\n",
-        'tmp.N\n',
-        'tmp.name\n',
-        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
-        "ap('viridis'), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100));"\
-        " plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='xx-"\
-        "small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title('G"\
-        "enus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'genus "\
-        "heatmap - viridis.png'))\nplt.close()\n\n",
-        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
-        "ap('afmhot'), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); "\
-        "plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='xx-s"\
-        "mall')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title('Ge"\
-        "nus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'genus h"\
-        "eatmap - viridis.png'))\nplt.close()\n\n",
-        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
-        "ap('pubugn'), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); "\
-        "plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='xx-s"\
-        "mall')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title('Ge"\
-        "nus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'genus h"\
-        "eatmap - viridis.png'))\nplt.close()\n\n",
-        "''\n",
-        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
-        "ap('PuBuGn'), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); "\
-        "plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='xx-s"\
-        "mall')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title('Ge"\
-        "nus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'genus h"\
-        "eatmap - viridis.png'))\nplt.close()\n\n",
-        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
-        "ap('PuBuGn', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)"\
-        "); plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='x"\
-        "x-small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title("\
-        "'Genus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'genu"\
-        "s heatmap - viridis.png'))\nplt.close()\n\n",
-        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
-        "ap('Paired', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)"\
-        "); plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='x"\
-        "x-small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title("\
-        "'Genus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'genu"\
-        "s heatmap - viridis.png'))\nplt.close()\n\n",
-        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
-        "ap('Set1', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100));"\
-        " plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='xx-"\
-        "small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title('G"\
-        "enus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'genus "\
-        "heatmap - alt colormap.png'))\nplt.close()\n\n",
-        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
-        "ap('YlGnBu', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)"\
-        "); plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='x"\
-        "x-small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title("\
-        "'Genus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'genu"\
-        "s heatmap - alt colormap.png'))\nplt.close()\n\n",
-        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
-        "ap('inferno', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100"\
-        ")); plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='"\
-        "xx-small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title"\
-        "('Genus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'gen"\
-        "us heatmap - alt colormap.png'))\nplt.close()\n\n",
-        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
-        "ap('ocean', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100))"\
-        "; plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size='xx"\
-        "-small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.title('"\
-        "Genus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'genus"\
-        " heatmap - alt colormap.png'))\nplt.close()\n\n",
-        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
-        "ap('cubehelix', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=1"\
-        "00)); plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, size"\
-        "='xx-small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.tit"\
-        "le('Genus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, 'g"\
-        "enus heatmap - alt colormap.png'))\nplt.close()\n\n",
-        "plt.clf() \nplt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cm"\
-        "ap('cubehelix_r', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax"\
-        "=100)); plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, si"\
-        "ze='xx-small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.t"\
-        "itle('Genus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, "\
-        "'genus heatmap - alt colormap.png'))\nplt.close()\n\n",
-        'plt.imshow(r)\n',
-        'np.sum(r, axis=0)\n',
-        'len(r)\n',
+                       'history': {u'file:c:/Users/idg101/Desktop/New folder/repo/ubiome_longitudinal_analysis/code/main.py': ['r'\
         'r\n',
-        'len(rr)\n',
-        'numSamples = len(rr)\nmat = np.zeros((numSamples, numSamples))\nfor'\
-        ' k in range(numSamples):\n    for kk in range(numSamples):\n       '\
-        ' mat[k,kk] = sp.stats.entropy(rr[:,k], rr[:,kk])\n\n',
-        'mat = np.zeros((numSamples, numSamples))\n',
-        'numSamples\n',
-        'for k in range(numSamples):\n    for kk in range(numSamples):\n    '\
-        '    mat[k,kk] = sp.stats.entropy(rr[:,k], rr[:,kk])\n\n',
-        'kk\n',
-        'rr[:,k]\n',
-        'k\n',
-        'rr\n',
-        'numSamples = len(rr)\nmat = np.zeros((numSamples, numSamples))\nfor'\
-        ' k in range(numSamples):\n    for kk in range(numSamples):\n       '\
-        ' mat[k,kk] = sp.stats.entropy(r[:,k], r[:,kk])\n\n',
-        'numSamples = len(rr)\nmat = np.zeros((numSamples, numSamples))\nfor'\
-        ' k in range(numSamples):\n    for kk in range(numSamples):\n       '\
-        ' mat[k,kk] = sp.stats.entropy(r[:,k]/100, r[:,kk]/100)\n\n',
-        'r[:,0]\n',
-        'r[:,0].sum()\n',
-        'sp.stats.entropy(r[:,0]/100, r[:,1]/100)\n',
-        'r[:,1]\n',
-        'numSamples = len(rr)\nmat = np.zeros((numSamples, numSamples))\nfor'\
-        ' k in range(numSamples):\n    for kk in range(numSamples):\n       '\
-        ' mat[k,kk] = sp.stats.entropy(r[:,k]/100 + 1e-6, r[:,kk]/100 + 1e-6'\
-        ')\n\n',
-        'numSamples = len(rr)\nmat = np.zeros((numSamples, numSamples))\nfor'\
-        ' k in range(numSamples):\n    for kk in range(numSamples):\n       '\
-        ' mat[k,kk] = np.mean((r[:,k] - r[:,kk])**2)\n\n',
-        'np.corrcoef(r[:,0], r[:,1])\n',
-        'np.corrcoef(r[:,0], r[:,2])\n',
-        'np.corrcoef(r[:,0], r[:,3])\n',
-        'numSamples = len(rr)\nmat = np.zeros((numSamples, numSamples))\nfor'\
-        ' k in range(numSamples):\n    for kk in range(numSamples):\n       '\
-        ' #mat[k,kk] = np.mean((r[:,k] - r[:,kk])**2)\n        mat[k,kk] = n'\
-        'p.corrcoef(r[:,k], r[:,kk])[1,0]\n\n',
-        'plt.colorbar()\n',
-        'numSamples = len(rr)\nref = np.median(r, axis=1)\nmat = np.zeros((n'\
-        'umSamples, numSamples))\nfor k in range(numSamples):\n    #mat[k,kk'\
-        '] = np.mean((r[:,k] - r[:,kk])**2)\n    mat[k,kk] = np.corrcoef(ref'\
-        ' r[:,k])[1,0]\n\n',
-        'numSamples = len(rr)\nref = np.median(r, axis=1)\nmat = np.zeros((n'\
-        'umSamples, numSamples))\nfor k in range(numSamples):\n    #mat[k,kk'\
-        '] = np.mean((r[:,k] - r[:,kk])**2)\n    mat[k,kk] = np.corrcoef(ref'\
-        ', r[:,k])[1,0]\n\n',
-        'ref\n',
-        'ref.shape\n',
-        'np.corrcoef(ref, r[:,k])\n',
-        'numSamples = len(rr)\nref = np.mean(r, axis=1)\nmat = np.zeros((num'\
-        'Samples, numSamples))\nfor k in range(numSamples):\n    #mat[k,kk] '\
-        '= np.mean((r[:,k] - r[:,kk])**2)\n    mat[k,kk] = np.corrcoef(ref, '\
-        'r[:,k])[1,0]\n\n',
-        'mat\n',
-        'numSamples = len(rr)\nref = np.mean(r, axis=1)\nmat = np.zeros((num'\
-        'Samples, ))\nfor k in range(numSamples):\n    #mat[k,kk] = np.mean('\
-        '(r[:,k] - r[:,kk])**2)\n    mat[k] = np.corrcoef(ref, r[:,k])[1,0]'\
-        '\n\n',
-        'numSamples = len(rr)\nref = np.median(r, axis=1)\nmat = np.zeros((n'\
-        'umSamples, ))\nfor k in range(numSamples):\n    #mat[k,kk] = np.mea'\
-        'n((r[:,k] - r[:,kk])**2)\n    mat[k] = np.corrcoef(ref, r[:,k])[1,0'\
-        ']\n\n',
-        'plt.imshow(mat)\n',
-        'plt.plot(mat)\n',
-        "numSamples = len(rr)\nref = np.median(r, axis=1)\nmat = np.zeros((n"\
-        "umSamples, ))\nfor k in range(numSamples):\n    mat[k] = np.corrcoe"\
-        "f(ref, r[:,k])[1,0]\nplt.clf()\nplt.plot(mat)\n#plt.legend(family, "\
-        "bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)\nplt.ylim([0,1])"\
-        "\nplt.title('Family Similarity Compared to Median')\nplt.ylabel('Si"\
-        "milarity [0,1]')\nplt.xlabel('Date')\nplt.savefig(os.path.join(base"\
-        "Dir, 'family similarity to median.png'))\n\n",
-        "numSamples = len(rr)\nref = np.median(r, axis=1)\nmat = np.zeros((n"\
-        "umSamples, ))\nfor k in range(numSamples):\n    mat[k] = np.corrcoe"\
-        "f(ref, r[:,k])[1,0]\nplt.clf()\nplt.plot(rr. mat)\n#plt.legend(fami"\
-        "ly, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)\nplt.ylim([0"\
-        ",1])\nplt.title('Family Similarity Compared to Median')\nplt.ylabel"\
-        "('Similarity [0,1]')\nplt.xlabel('Date')\nplt.savefig(os.path.join("\
-        "baseDir, 'family similarity to median.png'))\n\n",
-        "numSamples = len(rr)\nref = np.median(r, axis=1)\nmat = np.zeros((n"\
-        "umSamples, ))\nfor k in range(numSamples):\n    mat[k] = np.corrcoe"\
-        "f(ref, r[:,k])[1,0]\nplt.clf()\nplt.plot(rr, mat)\n#plt.legend(fami"\
-        "ly, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)\nplt.ylim([0"\
-        ",1])\nplt.title('Family Similarity Compared to Median')\nplt.ylabel"\
-        "('Similarity [0,1]')\nplt.xlabel('Date')\nplt.savefig(os.path.join("\
-        "baseDir, 'family similarity to median.png'))\n\n",
-        'matplotlib.mlab.PCA(r)\n',
-        'p\n',
-        'p.project(r[:,0])\n',
-        'p  = matplotlib.mlab.PCA(r.T)\n',
-        'p  = matplotlib.mlab.PCA(r)\n',
-        'p.project(r[:,0].T)\n',
-        'import sklearn\n',
-        'sklearn.manifold()\n',
-        'import sklearn.manifold\n',
-        'sklearn.manifold.Isomap()\n',
-        'f(r)\n',
-        'f.fit(r)\n',
-        'v = f.fit(r)\n',
-        'v = f.transform(r)\n',
-        'f = sklearn.manifold.Isomap()\n',
-        'v = f.fit(r.T)\n',
-        'v = f.transform(r.T)\n',
-        'v\n',
-        'v.shape\n',
-        'plt.show()\n',
-        'plt.clf()\n',
-        'plt.plot(v[:,0], v[:,1])\n',
-        "v = f.fit(r)    for label, x, y in zip(labels, v[:,0], v[:,1]):\n  "\
-        "      plt.annotate(label, xy=(x,y), textcoords = 'offset points', h"\
-        "a = 'right', va = 'bottom',\n        bbox = dict(boxstyle = 'round,"\
-        "pad=0.5', fc = 'yellow', alpha = 0.5),\n        arrowprops = dict(a"\
-        "rrowstyle = '->', connectionstyle = 'arc3,rad=0'))\n    plt.show()"\
-        "\n\n",
-        "for label, x, y in zip(labels, v[:,0], v[:,1]):\n    plt.annotate(l"\
-        "abel, xy=(x,y), textcoords = 'offset points', ha = 'right', va = 'b"\
-        "ottom',\n    bbox = dict(boxstyle = 'round,pad=0.5', fc = 'yellow',"\
-        " alpha = 0.5),\n    arrowprops = dict(arrowstyle = '->', connection"\
-        "style = 'arc3,rad=0'))\nplt.show()\n\n"]},
+        'import time\n',
+        "time.strftime('%a', rr[0])\n",
+        'datetime.time\n',
+        "time.strftime('%a', rr[0].time)\n",
+        "time.strftime('%a', rr[0].timetuple())\n",
+        "time.strftime('%b %d %Y', rr[0].timetuple())\n",
+        "plt.clf()\nf = sklearn.manifold.MDS()\nf.fit(r.T)\nv = f.fit_transf"\
+        "orm(r.T)\nlabels = ['{0}'.format(time.strftime('%b %d %Y', rr[i].ti"\
+        "metuple())) for i in range(numSamples)]\nplt.scatter(v[:,0], v[:,1]"\
+        ")\nplt.title('Cluster Analysis')\nfor label, x, y in zip(labels, v["\
+        ":,0], v[:,1]):\n    plt.annotate(label, xy=(x,y), xytext=(-10, -10)"\
+        ", textcoords = 'offset points', ha = 'right', va = 'bottom',\n    b"\
+        "box = dict(boxstyle = 'round,pad=0.5', fc = 'blue', alpha = 0.5),\n"\
+        "    arrowprops = dict(arrowstyle = 'wedge', connectionstyle = 'arc3"\
+        ",rad=-0.3'))\nplt.savefig(os.path.join(baseDir, 'cluster analysis.p"\
+        "ng'))\n\n",
+        "plt.clf()\nf = sklearn.manifold.MDS()\nf.fit(r.T)\nv = f.fit_transf"\
+        "orm(r.T)\nlabels = ['{0}'.format(time.strftime('%b %d %Y', rr[i].ti"\
+        "metuple())) for i in range(numSamples)]\nplt.scatter(v[:,0], v[:,1]"\
+        ")\nplt.title('Cluster Analysis')\nfor label, x, y in zip(labels, v["\
+        ":,0], v[:,1]):\n    plt.annotate(label, xy=(x,y), xytext=(-10, -10)"\
+        ", textcoords = 'offset points', size = 5, ha = 'right', va = 'botto"\
+        "m',\n    bbox = dict(boxstyle = 'round,pad=0.5', fc = 'blue', alpha"\
+        " = 0.5),\n    arrowprops = dict(arrowstyle = 'wedge', connectionsty"\
+        "le = 'arc3,rad=-0.3'))\nplt.savefig(os.path.join(baseDir, 'cluster "\
+        "analysis.png'))\n\n"]},
                        'launch-id': None,
-                       'sel-line': 1287,
-                       'sel-line-start': 76931,
-                       'selection_end': 76931,
-                       'selection_start': 76931}),
+                       'sel-line': 74,
+                       'sel-line-start': 3246,
+                       'selection_end': 3246,
+                       'selection_start': 3246}),
                      ('debug-watch',
                       'wide',
                       1,
@@ -432,147 +217,16 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                       'wide',
                       1,
                       {})],
-        'primary_view_state': {'editor_states': ({'bookmarks': ([[loc('../../../../../../../Python34/Lib/site-packages/matplotlib/cm.py'),
-        {'attrib-starts': [('get_cmap',
-                            137)],
-         'first-line': 136,
+        'primary_view_state': {'editor_states': ({'bookmarks': ([[loc('main.py'),
+        {'attrib-starts': [('stackplotTest',
+                            17)],
+         'first-line': 138,
          'folded-linenos': [],
-         'sel-line': 165,
-         'sel-line-start': 4796,
-         'selection_end': 4796,
-         'selection_start': 4796},
-        1470189891.043],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             17)],
-          'first-line': 198,
-          'folded-linenos': [],
-          'sel-line': 215,
-          'sel-line-start': 7329,
-          'selection_end': 7738,
-          'selection_start': 7329},
-         1470190239.803],
-        [loc('../../../../../../../Python34/Lib/site-packages/matplotlib/colors.py'),
-         {'attrib-starts': [('ColorConverter',
-                             242),
-                            ('ColorConverter.to_rgba',
-                             333)],
-          'first-line': 346,
-          'folded-linenos': [],
-          'sel-line': 375,
-          'sel-line-start': 13600,
-          'selection_end': 13600,
-          'selection_start': 13600},
-         1470190245.783],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             17)],
-          'first-line': 208,
-          'folded-linenos': [],
-          'sel-line': 236,
-          'sel-line-start': 8324,
-          'selection_end': 8366,
-          'selection_start': 8356},
-         1470191153.482],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             17)],
-          'first-line': 221,
-          'folded-linenos': [],
-          'sel-line': 238,
-          'sel-line-start': 8411,
-          'selection_end': 8431,
-          'selection_start': 8431},
-         1470191160.541],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             17)],
-          'first-line': 221,
-          'folded-linenos': [],
-          'sel-line': 239,
-          'sel-line-start': 8435,
-          'selection_end': 8501,
-          'selection_start': 8491},
-         1470191161.031],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             17)],
-          'first-line': 136,
-          'folded-linenos': [],
-          'sel-line': 141,
-          'sel-line-start': 4184,
-          'selection_end': 4216,
-          'selection_start': 4210},
-         1470278101.822],
-        [loc('main.py'),
-         {'attrib-starts': [],
-          'first-line': 0,
-          'folded-linenos': [],
-          'sel-line': 20,
-          'sel-line-start': 266,
-          'selection_end': 308,
-          'selection_start': 308},
-         1470278114.504],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             17)],
-          'first-line': 113,
-          'folded-linenos': [],
-          'sel-line': 141,
-          'sel-line-start': 4184,
-          'selection_end': 4216,
-          'selection_start': 4210},
-         1470278115.547],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             17)],
-          'first-line': 127,
-          'folded-linenos': [],
-          'sel-line': 145,
-          'sel-line-start': 4341,
-          'selection_end': 4363,
-          'selection_start': 4357},
-         1470278117.312],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             17)],
-          'first-line': 138,
-          'folded-linenos': [],
-          'sel-line': 156,
-          'sel-line-start': 4765,
-          'selection_end': 4795,
-          'selection_start': 4789},
-         1470278118.023],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             17)],
-          'first-line': 138,
-          'folded-linenos': [],
-          'sel-line': 158,
-          'sel-line-start': 4837,
-          'selection_end': 4895,
-          'selection_start': 4889},
-         1470278118.382],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             17)],
-          'first-line': 138,
-          'folded-linenos': [],
-          'sel-line': 161,
-          'sel-line-start': 4980,
-          'selection_end': 5010,
-          'selection_start': 5004},
-         1470278118.591],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             17)],
-          'first-line': 138,
-          'folded-linenos': [],
-          'sel-line': 163,
-          'sel-line-start': 5074,
-          'selection_end': 5122,
-          'selection_start': 5116},
-         1470278118.775],
+         'sel-line': 163,
+         'sel-line-start': 5074,
+         'selection_end': 5122,
+         'selection_start': 5116},
+        1470278118.775],
         [loc('main.py'),
          {'attrib-starts': [('stackplotTest',
                              17)],
@@ -638,7 +292,137 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
           'sel-line-start': 12865,
           'selection_end': 12865,
           'selection_start': 12865},
-         1470281036.871]],
+         1470281036.871],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             20)],
+          'first-line': 84,
+          'folded-linenos': [],
+          'sel-line': 101,
+          'sel-line-start': 2801,
+          'selection_end': 2839,
+          'selection_start': 2833},
+         1470327202.048],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             20)],
+          'first-line': 84,
+          'folded-linenos': [],
+          'sel-line': 102,
+          'sel-line-start': 2852,
+          'selection_end': 2885,
+          'selection_start': 2879},
+         1470327202.962],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             20)],
+          'first-line': 84,
+          'folded-linenos': [],
+          'sel-line': 104,
+          'sel-line-start': 2913,
+          'selection_end': 2975,
+          'selection_start': 2969},
+         1470327203.096],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             20)],
+          'first-line': 84,
+          'folded-linenos': [],
+          'sel-line': 111,
+          'sel-line-start': 3159,
+          'selection_end': 3181,
+          'selection_start': 3175},
+         1470327203.239],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             20)],
+          'first-line': 90,
+          'folded-linenos': [],
+          'sel-line': 118,
+          'sel-line-start': 3379,
+          'selection_end': 3417,
+          'selection_start': 3411},
+         1470327203.721],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             20)],
+          'first-line': 101,
+          'folded-linenos': [],
+          'sel-line': 119,
+          'sel-line-start': 3421,
+          'selection_end': 3454,
+          'selection_start': 3448},
+         1470327203.882],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             20)],
+          'first-line': 101,
+          'folded-linenos': [],
+          'sel-line': 123,
+          'sel-line-start': 3579,
+          'selection_end': 3641,
+          'selection_start': 3635},
+         1470327204.023],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             20)],
+          'first-line': 167,
+          'folded-linenos': [],
+          'sel-line': 195,
+          'sel-line-start': 6347,
+          'selection_end': 6369,
+          'selection_start': 6363},
+         1470327204.18],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             20)],
+          'first-line': 173,
+          'folded-linenos': [],
+          'sel-line': 201,
+          'sel-line-start': 6693,
+          'selection_end': 6715,
+          'selection_start': 6709},
+         1470327204.501],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             20)],
+          'first-line': 185,
+          'folded-linenos': [],
+          'sel-line': 213,
+          'sel-line-start': 7193,
+          'selection_end': 7215,
+          'selection_start': 7209},
+         1470327204.798],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             20)],
+          'first-line': 193,
+          'folded-linenos': [],
+          'sel-line': 221,
+          'sel-line-start': 7598,
+          'selection_end': 7620,
+          'selection_start': 7614},
+         1470327205.109],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             20)],
+          'first-line': 203,
+          'folded-linenos': [],
+          'sel-line': 231,
+          'sel-line-start': 8090,
+          'selection_end': 8112,
+          'selection_start': 8106},
+         1470327205.381],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             20)],
+          'first-line': 333,
+          'folded-linenos': [],
+          'sel-line': 361,
+          'sel-line-start': 12822,
+          'selection_end': 12850,
+          'selection_start': 12847},
+         1470327207.035]],
         20),
         'current-loc': loc('main.py'),
         'editor-state-list': [(loc('../../../../../../../Python34/Lib/site-packages/sklearn/neighbors/base.py'),
@@ -661,19 +445,20 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
         'top': 0}}),
                               (loc('main.py'),
                                {'attrib-starts': [('stackplotTest',
-        19)],
-                                'first-line': 349,
+        20)],
+                                'first-line': 356,
                                 'folded-linenos': [],
-                                'sel-line': 363,
-                                'sel-line-start': 12886,
-                                'selection_end': 12925,
-                                'selection_start': 12925})],
+                                'sel-line': 374,
+                                'sel-line-start': 13514,
+                                'selection_end': 13514,
+                                'selection_start': 13514})],
         'has-focus': True,
         'locked': False},
         [loc('../../../../../../../Python34/Lib/site-packages/sklearn/neighbors/base.py'),
          loc('../../../../../../../Program Files (x86)/Wing IDE 5.1/resources/doc/en/TOC.idx'),
          loc('main.py')]),
                                'open_files': [u'../../../../../../../Program Files (x86)/Wing IDE 5.1/resources/doc/en/TOC.idx',
+        u'../../../../../../../Python34/Lib/site-packages/sklearn/neighbors/base.py',
         u'main.py']},
         'saved_notebook_display': None,
         'split_percents': {0: 0.26955307262569833},
@@ -685,17 +470,18 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                  'splits': 2,
                  'tab_location': 'left',
                  'user_data': {}},
-        'window-alloc': (0,
-                         -1,
-                         1900,
-                         1008)}]}
-guimgr.recent-documents = [loc('main.py'),
-                           loc('../../../../../../../Python34/Lib/site-packages/sklearn/neighbors/base.py')]
+        'window-alloc': (375,
+                         89,
+                         944,
+                         996)}]}
+guimgr.recent-documents = [loc('main.py')]
 proj.build-cmd = {None: ('default',
                          None)}
 proj.env-vars = {None: ('default',
                         [u''])}
-search.search-history = [u'family',
+search.search-history = [u'mds',
+                         u'sample',
+                         u'family',
                          u'identified',
                          u'genus heat',
                          u'genus',

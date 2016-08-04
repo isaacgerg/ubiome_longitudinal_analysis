@@ -3,6 +3,7 @@ import os
 import sys
 import csv
 import json
+import time
 
 import numpy as np
 import scipy as sp
@@ -361,13 +362,14 @@ def stackplotTest():
     f = sklearn.manifold.MDS()
     f.fit(r.T)
     v = f.fit_transform(r.T)
-    labels = ['sample {0}'.format(rr[i]) for i in range(numSamples)]
+    labels = ['{0}'.format(time.strftime('%b %d %Y', rr[i].timetuple())) for i in range(numSamples)]
     plt.scatter(v[:,0], v[:,1])
+    plt.title('Cluster Analysis')
     for label, x, y in zip(labels, v[:,0], v[:,1]):
-        plt.annotate(label, xy=(x,y), textcoords = 'offset points', ha = 'right', va = 'bottom',
-        bbox = dict(boxstyle = 'round,pad=0.5', fc = 'yellow', alpha = 0.5),
-        arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0'))
-    plt.show()
+        plt.annotate(label, xy=(x,y), xytext=(-10, -10), textcoords = 'offset points', size = 7, ha = 'right', va = 'bottom',
+        bbox = dict(boxstyle = 'round,pad=0.5', fc = 'blue', alpha = 0.5),
+        arrowprops = dict(arrowstyle = 'wedge', connectionstyle = 'arc3,rad=-0.3'))
+    plt.savefig(os.path.join(baseDir, 'cluster analysis.png')) 
             
     # Pull all species
     species = []
