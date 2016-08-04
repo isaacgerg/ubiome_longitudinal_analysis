@@ -13,6 +13,8 @@ import matplotlib.pyplot as plt
 
 import datetime
 from cycler import cycler
+
+import sklearn.manifold
     
     
 def stackplotTest():
@@ -353,7 +355,19 @@ def stackplotTest():
     plt.title('Family Similarity Compared to Median')
     plt.ylabel('Similarity [0,1]')
     plt.xlabel('Date')
-    plt.savefig(os.path.join(baseDir, 'family similarity to median.png'))     
+    plt.savefig(os.path.join(baseDir, 'family similarity to median.png'))    
+    
+    plt.clf()
+    f = sklearn.manifold.MDS()
+    f.fit(r.T)
+    v = f.fit_transform(r.T)
+    labels = ['sample {0}'.format(rr[i]) for i in range(numSamples)]
+    plt.scatter(v[:,0], v[:,1])
+    for label, x, y in zip(labels, v[:,0], v[:,1]):
+        plt.annotate(label, xy=(x,y), textcoords = 'offset points', ha = 'right', va = 'bottom',
+        bbox = dict(boxstyle = 'round,pad=0.5', fc = 'yellow', alpha = 0.5),
+        arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0'))
+    plt.show()
             
     # Pull all species
     species = []
