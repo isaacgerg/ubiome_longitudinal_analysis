@@ -345,16 +345,15 @@ def stackplotTest():
     ref = np.median(r, axis=1)
     mat = np.zeros((numSamples, ))
     for k in range(numSamples):
-        #mat[k,kk] = np.mean((r[:,k] - r[:,kk])**2)
         mat[k] = np.corrcoef(ref, r[:,k])[1,0]
     plt.clf()
-    plt.stackplot(rr, r)
-    plt.legend(family, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
-    plt.ylim([0,100])
-    plt.title('Family Percent of Sample, Stacked')
-    plt.ylabel('Percent of Sample')
+    plt.plot(rr, mat)
+    #plt.legend(family, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+    plt.ylim([0,1])
+    plt.title('Family Similarity Compared to Median')
+    plt.ylabel('Similarity [0,1]')
     plt.xlabel('Date')
-    plt.savefig(os.path.join(baseDir, 'family percent of sample - stacked.png'))     
+    plt.savefig(os.path.join(baseDir, 'family similarity to median.png'))     
             
     # Pull all species
     species = []

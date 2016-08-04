@@ -4,7 +4,11 @@
 # Wing IDE project file : User-specific branch                   #
 ##################################################################
 [user attributes]
-debug.breakpoints = {loc('main.py'): {344: (0,
+debug.breakpoints = {loc('main.py'): {349: (0,
+        None,
+        1,
+        0),
+                                      359: (0,
         None,
         1,
         0)}}
@@ -55,7 +59,7 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                  'primary_view_state': {'area': 'wide',
         'constraint': None,
         'current_pages': [1,
-                          0],
+                          1],
         'notebook_display': 'normal',
         'notebook_percent': 0.3668831168831169,
         'override_title': None,
@@ -148,7 +152,7 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
         -1,
         -1),
                        'attrib-starts': [],
-                       'first-line': 225,
+                       'first-line': 1046,
                        'folded-linenos': [],
                        'history': {u'file:c:/Users/Isaac/Desktop/github/ubiome/ubiome_longitudinal_analysis/code/main.py': ['f'\
         'amily\n',
@@ -267,12 +271,102 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
         "=100)); plt.colorbar()\nplt.yticks(np.arange(r.shape[0]), genii, si"\
         "ze='xx-small')\nplt.xlabel('Sample Number'); plt.grid(False)\nplt.t"\
         "itle('Genus Heatmap [Percent]')\nplt.savefig(os.path.join(baseDir, "\
-        "'genus heatmap - alt colormap.png'))\nplt.close()\n\n"]},
+        "'genus heatmap - alt colormap.png'))\nplt.close()\n\n",
+        'plt.show()\n',
+        'plt.clf()\n',
+        'plt.imshow(r)\n',
+        'np.sum(r, axis=0)\n',
+        'len(r)\n',
+        'r\n',
+        'len(rr)\n',
+        'numSamples = len(rr)\nmat = np.zeros((numSamples, numSamples))\nfor'\
+        ' k in range(numSamples):\n    for kk in range(numSamples):\n       '\
+        ' mat[k,kk] = sp.stats.entropy(rr[:,k], rr[:,kk])\n\n',
+        'mat = np.zeros((numSamples, numSamples))\n',
+        'numSamples\n',
+        'for k in range(numSamples):\n    for kk in range(numSamples):\n    '\
+        '    mat[k,kk] = sp.stats.entropy(rr[:,k], rr[:,kk])\n\n',
+        'kk\n',
+        'rr[:,k]\n',
+        'k\n',
+        'rr\n',
+        'numSamples = len(rr)\nmat = np.zeros((numSamples, numSamples))\nfor'\
+        ' k in range(numSamples):\n    for kk in range(numSamples):\n       '\
+        ' mat[k,kk] = sp.stats.entropy(r[:,k], r[:,kk])\n\n',
+        'numSamples = len(rr)\nmat = np.zeros((numSamples, numSamples))\nfor'\
+        ' k in range(numSamples):\n    for kk in range(numSamples):\n       '\
+        ' mat[k,kk] = sp.stats.entropy(r[:,k]/100, r[:,kk]/100)\n\n',
+        'r[:,0]\n',
+        'r[:,0].sum()\n',
+        'sp.stats.entropy(r[:,0]/100, r[:,1]/100)\n',
+        'r[:,1]\n',
+        'numSamples = len(rr)\nmat = np.zeros((numSamples, numSamples))\nfor'\
+        ' k in range(numSamples):\n    for kk in range(numSamples):\n       '\
+        ' mat[k,kk] = sp.stats.entropy(r[:,k]/100 + 1e-6, r[:,kk]/100 + 1e-6'\
+        ')\n\n',
+        'numSamples = len(rr)\nmat = np.zeros((numSamples, numSamples))\nfor'\
+        ' k in range(numSamples):\n    for kk in range(numSamples):\n       '\
+        ' mat[k,kk] = np.mean((r[:,k] - r[:,kk])**2)\n\n',
+        'np.corrcoef(r[:,0], r[:,1])\n',
+        'np.corrcoef(r[:,0], r[:,2])\n',
+        'np.corrcoef(r[:,0], r[:,3])\n',
+        'numSamples = len(rr)\nmat = np.zeros((numSamples, numSamples))\nfor'\
+        ' k in range(numSamples):\n    for kk in range(numSamples):\n       '\
+        ' #mat[k,kk] = np.mean((r[:,k] - r[:,kk])**2)\n        mat[k,kk] = n'\
+        'p.corrcoef(r[:,k], r[:,kk])[1,0]\n\n',
+        'plt.colorbar()\n',
+        'numSamples = len(rr)\nref = np.median(r, axis=1)\nmat = np.zeros((n'\
+        'umSamples, numSamples))\nfor k in range(numSamples):\n    #mat[k,kk'\
+        '] = np.mean((r[:,k] - r[:,kk])**2)\n    mat[k,kk] = np.corrcoef(ref'\
+        ' r[:,k])[1,0]\n\n',
+        'numSamples = len(rr)\nref = np.median(r, axis=1)\nmat = np.zeros((n'\
+        'umSamples, numSamples))\nfor k in range(numSamples):\n    #mat[k,kk'\
+        '] = np.mean((r[:,k] - r[:,kk])**2)\n    mat[k,kk] = np.corrcoef(ref'\
+        ', r[:,k])[1,0]\n\n',
+        'ref\n',
+        'ref.shape\n',
+        'np.corrcoef(ref, r[:,k])\n',
+        'numSamples = len(rr)\nref = np.mean(r, axis=1)\nmat = np.zeros((num'\
+        'Samples, numSamples))\nfor k in range(numSamples):\n    #mat[k,kk] '\
+        '= np.mean((r[:,k] - r[:,kk])**2)\n    mat[k,kk] = np.corrcoef(ref, '\
+        'r[:,k])[1,0]\n\n',
+        'mat\n',
+        'numSamples = len(rr)\nref = np.mean(r, axis=1)\nmat = np.zeros((num'\
+        'Samples, ))\nfor k in range(numSamples):\n    #mat[k,kk] = np.mean('\
+        '(r[:,k] - r[:,kk])**2)\n    mat[k] = np.corrcoef(ref, r[:,k])[1,0]'\
+        '\n\n',
+        'numSamples = len(rr)\nref = np.median(r, axis=1)\nmat = np.zeros((n'\
+        'umSamples, ))\nfor k in range(numSamples):\n    #mat[k,kk] = np.mea'\
+        'n((r[:,k] - r[:,kk])**2)\n    mat[k] = np.corrcoef(ref, r[:,k])[1,0'\
+        ']\n\n',
+        'plt.imshow(mat)\n',
+        'plt.plot(mat)\n',
+        "numSamples = len(rr)\nref = np.median(r, axis=1)\nmat = np.zeros((n"\
+        "umSamples, ))\nfor k in range(numSamples):\n    mat[k] = np.corrcoe"\
+        "f(ref, r[:,k])[1,0]\nplt.clf()\nplt.plot(mat)\n#plt.legend(family, "\
+        "bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)\nplt.ylim([0,1])"\
+        "\nplt.title('Family Similarity Compared to Median')\nplt.ylabel('Si"\
+        "milarity [0,1]')\nplt.xlabel('Date')\nplt.savefig(os.path.join(base"\
+        "Dir, 'family similarity to median.png'))\n\n",
+        "numSamples = len(rr)\nref = np.median(r, axis=1)\nmat = np.zeros((n"\
+        "umSamples, ))\nfor k in range(numSamples):\n    mat[k] = np.corrcoe"\
+        "f(ref, r[:,k])[1,0]\nplt.clf()\nplt.plot(rr. mat)\n#plt.legend(fami"\
+        "ly, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)\nplt.ylim([0"\
+        ",1])\nplt.title('Family Similarity Compared to Median')\nplt.ylabel"\
+        "('Similarity [0,1]')\nplt.xlabel('Date')\nplt.savefig(os.path.join("\
+        "baseDir, 'family similarity to median.png'))\n\n",
+        "numSamples = len(rr)\nref = np.median(r, axis=1)\nmat = np.zeros((n"\
+        "umSamples, ))\nfor k in range(numSamples):\n    mat[k] = np.corrcoe"\
+        "f(ref, r[:,k])[1,0]\nplt.clf()\nplt.plot(rr, mat)\n#plt.legend(fami"\
+        "ly, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)\nplt.ylim([0"\
+        ",1])\nplt.title('Family Similarity Compared to Median')\nplt.ylabel"\
+        "('Similarity [0,1]')\nplt.xlabel('Date')\nplt.savefig(os.path.join("\
+        "baseDir, 'family similarity to median.png'))\n\n"]},
                        'launch-id': None,
-                       'sel-line': 239,
-                       'sel-line-start': 21584,
-                       'selection_end': 21584,
-                       'selection_start': 21584}),
+                       'sel-line': 1060,
+                       'sel-line-start': 66356,
+                       'selection_end': 66356,
+                       'selection_start': 66356}),
                      ('debug-watch',
                       'wide',
                       1,
@@ -311,42 +405,18 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                       'wide',
                       1,
                       {})],
-        'primary_view_state': {'editor_states': ({'bookmarks': ([[loc('../../../../../../../Python34/Lib/site-packages/matplotlib/__init__.py'),
-        {'attrib-starts': [('unpack_labeled_data',
-                            1571),
-                           ('unpack_labeled_data.param',
-                            1609),
-                           ('unpack_labeled_data.param.inner',
-                            1733)],
-         'first-line': 1782,
+        'primary_view_state': {'editor_states': ({'bookmarks': ([[loc('../../../../../../../Python34/Lib/site-packages/matplotlib/colors.py'),
+        {'attrib-starts': [('ColorConverter',
+                            242),
+                           ('ColorConverter.to_rgba',
+                            333)],
+         'first-line': 346,
          'folded-linenos': [],
-         'sel-line': 1811,
-         'sel-line-start': 62455,
-         'selection_end': 62455,
-         'selection_start': 62455},
-        1470188719.177],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             17)],
-          'first-line': 11,
-          'folded-linenos': [],
-          'sel-line': 22,
-          'sel-line-start': 394,
-          'selection_end': 412,
-          'selection_start': 412},
-         1470188905.147],
-        [loc('../../../../../../../Python34/Lib/site-packages/matplotlib/colors.py'),
-         {'attrib-starts': [('ColorConverter',
-                             242),
-                            ('ColorConverter.to_rgba',
-                             333)],
-          'first-line': 346,
-          'folded-linenos': [],
-          'sel-line': 375,
-          'sel-line-start': 13600,
-          'selection_end': 13600,
-          'selection_start': 13600},
-         1470188909.755],
+         'sel-line': 375,
+         'sel-line-start': 13600,
+         'selection_end': 13600,
+         'selection_start': 13600},
+        1470188909.755],
         [loc('main.py'),
          {'attrib-starts': [('stackplotTest',
                              17)],
@@ -519,40 +589,62 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
           'sel-line-start': 5074,
           'selection_end': 5122,
           'selection_start': 5116},
-         1470278118.775]],
+         1470278118.775],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             17)],
+          'first-line': 325,
+          'folded-linenos': [],
+          'sel-line': 343,
+          'sel-line-start': 12262,
+          'selection_end': 12488,
+          'selection_start': 12262},
+         1470279641.367],
+        [loc('../../../../../../../Python34/Lib/site-packages/matplotlib/image.py'),
+         {'attrib-starts': [('_AxesImageBase',
+                             62),
+                            ('_AxesImageBase.set_data',
+                             434)],
+          'first-line': 423,
+          'folded-linenos': [],
+          'sel-line': 452,
+          'sel-line-start': 15459,
+          'selection_end': 15459,
+          'selection_start': 15459},
+         1470279653.039]],
         20),
         'current-loc': loc('main.py'),
-        'editor-state-list': [(loc('../../../../../../../Python34/Lib/site-packages/matplotlib/colors.py'),
-                               {'attrib-starts': [('ColorConverter',
-        242),
-        ('ColorConverter.to_rgba',
-         333)],
-                                'first-line': 346,
-                                'folded-linenos': [],
-                                'sel-line': 375,
-                                'sel-line-start': 13600,
-                                'selection_end': 13600,
-                                'selection_start': 13600}),
-                              (loc('../../../../../../../Program Files (x86)/Wing IDE 5.1/resources/doc/en/TOC.idx'),
+        'editor-state-list': [(loc('../../../../../../../Program Files (x86)/Wing IDE 5.1/resources/doc/en/TOC.idx'),
                                {'displayed-index': 27,
                                 'viewer-state': {'history': [-1,
         27],
         'history-pos': 1,
         'index': 27,
         'top': 0}}),
+                              (loc('../../../../../../../Python34/Lib/site-packages/matplotlib/image.py'),
+                               {'attrib-starts': [('_AxesImageBase',
+        62),
+        ('_AxesImageBase.set_data',
+         434)],
+                                'first-line': 423,
+                                'folded-linenos': [],
+                                'sel-line': 452,
+                                'sel-line-start': 15459,
+                                'selection_end': 15459,
+                                'selection_start': 15459}),
                               (loc('main.py'),
                                {'attrib-starts': [('stackplotTest',
         17)],
-                                'first-line': 312,
+                                'first-line': 325,
                                 'folded-linenos': [],
-                                'sel-line': 289,
-                                'sel-line-start': 10463,
-                                'selection_end': 10484,
-                                'selection_start': 10478})],
-        'has-focus': True,
+                                'sel-line': 350,
+                                'sel-line-start': 12470,
+                                'selection_end': 12544,
+                                'selection_start': 12544})],
+        'has-focus': False,
         'locked': False},
-        [loc('../../../../../../../Python34/Lib/site-packages/matplotlib/colors.py'),
-         loc('../../../../../../../Program Files (x86)/Wing IDE 5.1/resources/doc/en/TOC.idx'),
+        [loc('../../../../../../../Program Files (x86)/Wing IDE 5.1/resources/doc/en/TOC.idx'),
+         loc('../../../../../../../Python34/Lib/site-packages/matplotlib/image.py'),
          loc('main.py')]),
                                'open_files': [u'../../../../../../../Program Files (x86)/Wing IDE 5.1/resources/doc/en/TOC.idx',
         u'main.py']},
@@ -571,7 +663,7 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                          1900,
                          1060)}]}
 guimgr.recent-documents = [loc('main.py'),
-                           loc('../../../../../../../Python34/Lib/site-packages/matplotlib/colors.py')]
+                           loc('../../../../../../../Python34/Lib/site-packages/matplotlib/image.py')]
 proj.build-cmd = {None: ('default',
                          None)}
 proj.env-vars = {None: ('default',
