@@ -487,12 +487,95 @@ def stackplotTest():
     
     return
 
+def parseOtu():
+    fn = r'c:\users\idg101\desktop\otu_table_mc2_w_tax_even32233.txt'
+    fid = open(fn)
+    line = fid.readline()
+    subjects = (fid.readline()).split('\t')
+    subjects = subjects[1:-1]
+    numSubjects = len(subjects)
+    mat = []
+    otus = []
+    while True:
+        line = (fid.readline()).split('\t')
+        otus.append(line[-1])        
+        if line[0] is '':
+            break
+        mat.append(np.array([float(i) for i in line[1:-1]]))
+    mat = np.array(mat)
+    
+    # Compare at the family level
+    # Gather all families
+    families = []
+    for k in range(len(otus)):
+        tmp = otus[k].split(';')
+        if len(tmp) >= 5:
+            if len(tmp[4])>4:
+                family = str.strip(tmp[4][4:])
+                family = family.replace('[','')
+                family = family.replace(']','')
+                families.append(family)
+    
+    families = set(families)
+    numFamilies = len(families)
+    rr = np.zeros((numFamilies, numSubjects))
+    # Gather up rows for a specific family
+    idx = 0
+    for k in otus:
+        famId = 0
+        for family in families:
+            if k.find(family)>-1:
+                rr[famId, :] += mat[idx,:]
+                break
+            famId += 1
+        idx += 1
+    
+    # Normalize
+    rr = rr / np.sum(rr, axis=0)[np.newaxis]
+    
+    # read in control vs patients
+    fid = open(r'C:\Users\idg101\Desktop\mapping_metadata_CFS.txt')
+    reader = csv.DictReader(fid, delimiter='\t')
+    controls = []
+    patients = []
+    idx = 0
+    for row in reader:
+        if row['Subject'] == 'Control':  
+            controls.append(row['#SampleID'])
+        if row['Subject'] == 'Patient':  
+            patients.append(row['#SampleID'])    
+            
+    controlsIdx = []
+    patientsIdx = []
+    for k in range(len(subjects)):
+        for kk in controls:
+            if subjects[k] == kk:
+                controlsIdx.append(k)
+        for kk in patients:
+            if subjects[k] == kk:
+                patientsIdx.append(k)                
+
+    patientsIdx = np.array(patientsIdx)
+    controlsIdx = np.array(controlsIdx)
+    controlMat = rr[:,controlsIdx]
+    patientMat = rr[:,patientsIdx]
+    inputMat = np.hstack((patientMat, controlMat))
+    outputVec = np.hstack((np.ones(patientMat.shape[1]), np.zeros(controlMat.shape[1])))
+
+    # Train a classifier
+
+
+    return
+
 if __name__ == "__main__":
     # https://raw.githubusercontent.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/master/styles/matplotlibrc
     #matplotlib.style.use('https://raw.githubusercontent.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/master/styles/matplotlibrc')
     matplotlib.style.use('https://raw.githubusercontent.com/isaacgerg/matplotlibrc/master/matplotlibrc.txt')
     
-    stackplotTest()
+    # TODO rename
+    #stackplotTest()
+    
+    parseOtu()
    
     print('Done.')
     
