@@ -488,7 +488,7 @@ def stackplotTest():
     return
 
 def parseOtu():
-    fn = r'c:\users\idg101\desktop\otu_table_mc2_w_tax_even32233.txt'
+    fn = r'..\cfs_data\otu_table_mc2_w_tax_even32233.txt'
     fid = open(fn)
     line = fid.readline()
     subjects = (fid.readline()).split('\t')
@@ -534,7 +534,7 @@ def parseOtu():
     rr = rr / np.sum(rr, axis=0)[np.newaxis]
     
     # read in control vs patients
-    fid = open(r'C:\Users\idg101\Desktop\mapping_metadata_CFS.txt')
+    fid = open(r'..\cfs_data\mapping_metadata_CFS.txt')
     reader = csv.DictReader(fid, delimiter='\t')
     controls = []
     patients = []
@@ -560,10 +560,30 @@ def parseOtu():
     controlMat = rr[:,controlsIdx]
     patientMat = rr[:,patientsIdx]
     inputMat = np.hstack((patientMat, controlMat))
-    outputVec = np.hstack((np.ones(patientMat.shape[1]), np.zeros(controlMat.shape[1])))
+    outputVec = np.hstack((np.ones(patientMat.shape[1]), -np.ones(controlMat.shape[1])))
 
-    # Train a classifier
-
+    # Affinity Matrix
+    numSubjects = inputMat.shape[1]
+    aff_mat = np.zeros((numSubjects, numSubjects))
+    for k in range(numSubjects):
+        for kk in range(numSubjects):
+            aff_mat[k,kk] = 1/np.sqrt(np.sum((inputMat[:,k] - inputMat[:,kk])**2))
+    plt.figure()
+    plt.imshow(aff_mat)
+    plt.show()
+    
+    from sklearn.lda import LDA
+    clf = LDA()
+    clf.fit(inputMat.T, outputVec)    
+    fit = clf.predict(inputMat.T)
+    err = np.sum(np.abs(fit - outputVec)>0)
+    print(err)
+    
+    # Predict my data
+    # Read in my data file
+    # Get family distribution
+    # Merge family set
+    # Do LDA fit
 
     return
 
