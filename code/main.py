@@ -327,8 +327,10 @@ def stackplotTest():
     r_int = np.round(r*10000)
     #N = np.sum(r_int, axis=0)
     #D = np.sum(r_int*(r_int-1), axis=0) /  (np.sum(r_int, axis=0)*(np.sum(r_int, axis=0)-1))
-    D = np.sum((r/100)**2,axis=0)
-    plt.plot(rr, 1-D)
+    D = np.sum((r/100)**2,axis=0) # old way
+    #p = (r/np.sum(r, axis=0))
+    #D = 1/np.sum(p**2, axis=0)          
+    plt.plot(rr, 10*(1-D))
     plt.title('Simpsons Diversity Index - (from Family)')
     plt.xlabel('Sample Date')
     plt.ylim([0,1])
