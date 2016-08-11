@@ -326,14 +326,14 @@ def stackplotTest():
     plt.clf()
     r_int = np.round(r*10000)
     #N = np.sum(r_int, axis=0)
-    #D = np.sum(r_int*(r_int-1), axis=0) /  (np.sum(r_int, axis=0)*(np.sum(r_int, axis=0)-1))
-    D = np.sum((r/100)**2,axis=0) # old way
+    D = np.sum(r_int*(r_int-1), axis=0) /  (np.sum(r_int, axis=0)*(np.sum(r_int, axis=0)-1))
+    #D = np.sum((r/100)**2,axis=0) # old way
     #p = (r/np.sum(r, axis=0))
     #D = 1/np.sum(p**2, axis=0)          
     plt.plot(rr, 10*(1-D))
     plt.title('Simpsons Diversity Index - (from Family)')
     plt.xlabel('Sample Date')
-    plt.ylim([0,1])
+    plt.ylim([0,10])
     plt.savefig(os.path.join(baseDir, 'simpsons diversity index.png'))     
     
     plt.clf()
@@ -574,10 +574,16 @@ def parseOtu():
     
     from sklearn.lda import LDA
     clf = LDA()
-    clf.fit(inputMat.T, outputVec)    
+    clf.fit(inputMat[:,1:80].T, outputVec[1:80])    
     fit = clf.predict(inputMat.T)
     err = np.sum(np.abs(fit - outputVec)>0)
     print(err)
+    
+    # SVM
+    clf = sklearn.svm.SVC(kernel='linear', C=1e-1)
+    n_samples = inputMat.shape[1]
+    cv = sklearn.cross_validation.KFold(n_samples,n_folds=8,shuffle=True)
+    scores = sklearn.cross_validation.cross_val_score(clf, inputMat.T, outputVec, cv=cv)    
     
     # Predict my data
     # Read in my data file
@@ -593,7 +599,7 @@ if __name__ == "__main__":
     matplotlib.style.use('https://raw.githubusercontent.com/isaacgerg/matplotlibrc/master/matplotlibrc.txt')
     
     # TODO rename
-    #stackplotTest()
+    stackplotTest()
     
     parseOtu()
    

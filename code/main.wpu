@@ -4,11 +4,15 @@
 # Wing IDE project file : User-specific branch                   #
 ##################################################################
 [user attributes]
-debug.breakpoints = {loc('main.py'): {377: (0,
+debug.breakpoints = {loc('main.py'): {339: (0,
         None,
         1,
         0),
-                                      581: (0,
+                                      377: (0,
+        None,
+        1,
+        0),
+                                      594: (0,
         None,
         1,
         0)}}
@@ -58,7 +62,7 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                                {})],
                  'primary_view_state': {'area': 'wide',
         'constraint': None,
-        'current_pages': [3,
+        'current_pages': [1,
                           1],
         'notebook_display': 'normal',
         'notebook_percent': 0.3668831168831169,
@@ -152,71 +156,10 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
         -1,
         -1),
                        'attrib-starts': [],
-                       'first-line': 3259,
+                       'first-line': 3778,
                        'folded-linenos': [],
                        'history': {u'file:c:/Users/Isaac/Desktop/github/ubiome/ubiome_longitudinal_analysis/code/main.py': ['p'\
-        '.project(r[:,0].T)\n',
-        'import sklearn\n',
-        'sklearn.manifold()\n',
-        'import sklearn.manifold\n',
-        'sklearn.manifold.Isomap()\n',
-        'f(r)\n',
-        'f.fit(r)\n',
-        'v = f.fit(r)\n',
-        'v = f.transform(r)\n',
-        'f = sklearn.manifold.Isomap()\n',
-        'v = f.fit(r.T)\n',
-        'v = f.transform(r.T)\n',
-        'v\n',
-        'v.shape\n',
-        'plt.show()\n',
-        'plt.clf()\n',
-        'plt.plot(v[:,0], v[:,1])\n',
-        "v = f.fit(r)    for label, x, y in zip(labels, v[:,0], v[:,1]):\n  "\
-        "      plt.annotate(label, xy=(x,y), textcoords = 'offset points', h"\
-        "a = 'right', va = 'bottom',\n        bbox = dict(boxstyle = 'round,"\
-        "pad=0.5', fc = 'yellow', alpha = 0.5),\n        arrowprops = dict(a"\
-        "rrowstyle = '->', connectionstyle = 'arc3,rad=0'))\n    plt.show()"\
-        "\n\n",
-        "for label, x, y in zip(labels, v[:,0], v[:,1]):\n    plt.annotate(l"\
-        "abel, xy=(x,y), textcoords = 'offset points', ha = 'right', va = 'b"\
-        "ottom',\n    bbox = dict(boxstyle = 'round,pad=0.5', fc = 'yellow',"\
-        " alpha = 0.5),\n    arrowprops = dict(arrowstyle = '->', connection"\
-        "style = 'arc3,rad=0'))\nplt.show()\n\n",
-        'rr[0]\n',
-        "plt.clf()\nf = sklearn.manifold.MDS()\nf.fit(r.T)\nv = f.transform("\
-        "r.T)\nlabels = ['sample {0}'.format(rr[i]) for i in range(numSample"\
-        "s)]\nplt.scatter(v[:,0], v[:,1])\nfor label, x, y in zip(labels, v["\
-        ":,0], v[:,1]):\n    plt.annotate(label, xy=(x,y), textcoords = 'off"\
-        "set points', ha = 'right', va = 'bottom',\n    bbox = dict(boxstyle"\
-        " = 'round,pad=0.5', fc = 'yellow', alpha = 0.5),\n    arrowprops = "\
-        "dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0'))\nplt.show("\
-        ")\n\n",
-        "plt.clf()\nf = sklearn.manifold.MDS()\nf.fit(r.T)\nv = f.fit_transf"\
-        "orm(r.T)\nlabels = ['sample {0}'.format(rr[i]) for i in range(numSa"\
-        "mples)]\nplt.scatter(v[:,0], v[:,1])\nfor label, x, y in zip(labels"\
-        ", v[:,0], v[:,1]):\n    plt.annotate(label, xy=(x,y), textcoords = "\
-        "'offset points', ha = 'right', va = 'bottom',\n    bbox = dict(boxs"\
-        "tyle = 'round,pad=0.5', fc = 'yellow', alpha = 0.5),\n    arrowprop"\
-        "s = dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0'))\nplt.s"\
-        "how()\n\n",
-        'f = sklearn.manifold.MDS()\nf.fit(r.T)\nv = f.fit_transform(r.T)\n'\
-        '\n',
-        "labels = ['sample {0}'.format(i) for i in range(numSamples)]\n",
-        "plt.scatter(v[:,0], v[:,1])\nfor label, x, y in zip(labels, v[:,0],"\
-        " v[:,1]):\n    plt.annotate(label, xy=(x,y), textcoords = 'offset p"\
-        "oints', ha = 'right', va = 'bottom',\n    bbox = dict(boxstyle = 'r"\
-        "ound,pad=0.5', fc = 'yellow', alpha = 0.5),\n    arrowprops = dict("\
-        "arrowstyle = '->', connectionstyle = 'arc3,rad=0'))\nplt.show()\n\n",
-        'r.shape\n',
-        'r/np.sum(r, axis=1)\n',
-        'r/np.sum(r, axis=0)\n',
-        '(r/np.sum(r, axis=0))[0,:]\n',
-        'np.sum((r/np.sum(r, axis=0))[0,:])\n',
-        'np.sum((r/np.sum(r, axis=0))[1,:])\n',
-        'np.sum((r/np.sum(r, axis=0))[:,0])\n',
-        'p = np.sum((r/np.sum(r, axis=0))\n)\n',
-        'p = np.sum((r/np.sum(r, axis=0)))\n',
+        ' = np.sum((r/np.sum(r, axis=0)))\n',
         'p = (r/np.sum(r, axis=0))\n',
         'D = 1/np.sum(p**2, axis=0)  \n',
         '(1/44)\n',
@@ -267,14 +210,11 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
         'D = np.sum(r_int*(r_int-1), axis=0) /  (np.sum(r_int, axis=0)*(np.s'\
         'um(r_int, axis=0)-1))\n',
         'D = np.sum((r/100)**2,axis=0)\n',
-        'D\n',
-        '1-D\n',
         'plt.imshow(inputMat)\n',
         'aff_mat = np.zeros((numSubjects, numSubjects))\nfor k in range(numS'\
         'ubjects):\n    for kk in range(numSubjects):\n        aff_mat = 1/n'\
         'p.sqrt(np.sum((inputMat[k,:] - inputMat[kk,:])**2))\n\n',
         'inputMat.shahpe\n',
-        'inputMat.shape\n',
         'numSubjects\n',
         'numSubjects = inputMat.shape[1]\naff_mat = np.zeros((numSubjects, n'\
         'umSubjects))\nfor k in range(numSubjects):\n    for kk in range(num'\
@@ -292,16 +232,96 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
         'plt.imshow(aff_mat)\n',
         'from sklearn.lda import LDA\nclf = LDA()\nclf.fit(inputMat, outputV'\
         'ec)\n\n',
-        'outputVec\n',
         'outputVec.shape\n',
         'from sklearn.lda import LDA\nclf = LDA()\nclf.fit(inputMat.T, outpu'\
         'tVec)\n\n',
-        'clf.predict(inputMat.T)\n']},
+        'clf.predict(inputMat.T)\n',
+        'outputVec\n',
+        'fit-outputVecf\n',
+        'fit-outputVec\n',
+        'err = np.sum(np.abs(fit - outputVec)>0)\n',
+        'err\n',
+        '6/40\n',
+        'fit\n',
+        'families\n',
+        'scores = cross_validation.cross_val_score(clf, inputMat.T, outputVe'\
+        'c, cv=5)    \n',
+        ' scores = sklearn.cross_validation.cross_val_score(clf, inputMat, o'\
+        'utputVec, cv=5)    \n',
+        ' scores = sklearn.cross_validation.cross_val_score(clf, inputMat.T,'\
+        ' outputVec, cv=5)    \n',
+        ' scores = sklearn.cross_validation.cross_val_score(clf, inputMat.T,'\
+        ' outputVec, cv=1)    \n',
+        ' scores = sklearn.cross_validation.cross_val_score(clf, inputMat.T,'\
+        ' outputVec, cv=2)    \n',
+        'clf.score(inputMat.T, outputVec)\n',
+        'sklearn.cross_validation.cross_val_score(clf, inputMat.T, outputVec'\
+        ', cv=5)\n',
+        'n_samples = inputMat.shape[1]\ncv = cross_validation.ShuffleSplit(n'\
+        '_samples, n_iter=3, test_size=0.3, random_state=0)    \n\nscores = '\
+        'sklearn.cross_validation.cross_val_score(clf, inputMat.T, outputVec'\
+        ', cv=cv)\n\n',
+        'n_samples = inputMat.shape[1]\ncv = sklearn.cross_validation.Shuffl'\
+        'eSplit(n_samples, n_iter=3, test_size=0.3, random_state=0)    \n\n'\
+        'scores = sklearn.cross_validation.cross_val_score(clf, inputMat.T, '\
+        'outputVec, cv=cv)\n\n',
+        'n_samples = inputMat.shape[1]\ncv = sklearn.cross_validation.Shuffl'\
+        'eSplit(n_samples, n_iter=3, test_size=0.9, random_state=0)    \nsco'\
+        'res = sklearn.cross_validation.cross_val_score(clf, inputMat.T, out'\
+        'putVec, cv=cv)\n\n',
+        'n_samples = inputMat.shape[1]\ncv = sklearn.cross_validation.Shuffl'\
+        'eSplit(n_samples, n_iter=3, test_size=0.1, random_state=0)    \nsco'\
+        'res = sklearn.cross_validation.cross_val_score(clf, inputMat.T, out'\
+        'putVec, cv=cv)\n\n',
+        'n_samples = inputMat.shape[1]\ncv = sklearn.cross_validation.Shuffl'\
+        'eSplit(n_samples, n_iter=30, test_size=0.1, random_state=0)    \nsc'\
+        'ores = sklearn.cross_validation.cross_val_score(clf, inputMat.T, ou'\
+        'tputVec, cv=cv)\n\n',
+        'n_samples\n',
+        'cv = sklearn.cross_validation.ShuffleSplit(n_samples, n_iter=30, te'\
+        'st_size=0.05, random_state=0)    \nscores = sklearn.cross_validatio'\
+        'n.cross_val_score(clf, inputMat.T, outputVec, cv=cv)\n\n',
+        "clf = svm.SVC(kernel='linear', C=1)\nn_samples = inputMat.shape[1]"\
+        "\ncv = sklearn.cross_validation.ShuffleSplit(n_samples, n_iter=30, "\
+        "test_size=0.05, random_state=0)    \nscores = sklearn.cross_validat"\
+        "ion.cross_val_score(clf, inputMat.T, outputVec, cv=cv)\n\n",
+        "# SVM\nclf = sklearn.svm.SVC(kernel='linear', C=1)\nn_samples = inp"\
+        "utMat.shape[1]\ncv = sklearn.cross_validation.ShuffleSplit(n_sample"\
+        "s, n_iter=30, test_size=0.05, random_state=0)    \nscores = sklearn"\
+        ".cross_validation.cross_val_score(clf, inputMat.T, outputVec, cv=cv"\
+        ")\n\n",
+        "clf = sklearn.svm.SVC(kernel='linear', C=1)\nn_samples = inputMat.s"\
+        "hape[1]\ncv = sklearn.cross_validation.ShuffleSplit(n_samples, n_it"\
+        "er=30, test_size=0.5, random_state=0)    \nscores = sklearn.cross_v"\
+        "alidation.cross_val_score(clf, inputMat.T, outputVec, cv=cv)\n\n",
+        'inputMat\n',
+        'inputMat.shape\n',
+        'n_samples = inputMat.shape[1]\ncv = sklearn.cross_validation.Shuffl'\
+        'eSplit(n_samples, n_iter=30, test_size=0.2, random_state=0)    \nsc'\
+        'ores = sklearn.cross_validation.cross_val_score(clf, inputMat.T, ou'\
+        'tputVec, cv=cv)\n\n',
+        "clf = sklearn.svm.SVC(kernel='linear', C=10)\nn_samples = inputMat."\
+        "shape[1]\ncv = sklearn.cross_validation.ShuffleSplit(n_samples, n_i"\
+        "ter=30, test_size=0.2, random_state=0)    \nscores = sklearn.cross_"\
+        "validation.cross_val_score(clf, inputMat.T, outputVec, cv=cv)\n\n",
+        "clf = sklearn.svm.SVC(kernel='linear', C=1e-1)\nn_samples = inputMa"\
+        "t.shape[1]\ncv = sklearn.cross_validation.ShuffleSplit(n_samples, n"\
+        "_iter=30, test_size=0.2, random_state=0)    \nscores = sklearn.cros"\
+        "s_validation.cross_val_score(clf, inputMat.T, outputVec, cv=cv)\n\n",
+        'lf = LDA()\n',
+        'clf = LDA()\n',
+        'n_samples = inputMat.shape[1]\ncv = sklearn.cross_validation.KFold('\
+        'n_samples,n_folds=8,shuffle=True)\nscores = sklearn.cross_validatio'\
+        'n.cross_val_score(clf, inputMat.T, outputVec, cv=cv)\n\n',
+        'scores\n',
+        'scores.mean()\n',
+        'D\n',
+        '1-D\n']},
                        'launch-id': None,
-                       'sel-line': 3273,
-                       'sel-line-start': 193208,
-                       'selection_end': 193208,
-                       'selection_start': 193208}),
+                       'sel-line': 3792,
+                       'sel-line-start': 226757,
+                       'selection_end': 226757,
+                       'selection_start': 226757}),
                      ('debug-watch',
                       'wide',
                       1,
@@ -343,72 +363,13 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
         'primary_view_state': {'editor_states': ({'bookmarks': ([[loc('main.py'),
         {'attrib-starts': [('stackplotTest',
                             17)],
-         'first-line': 208,
+         'first-line': 127,
          'folded-linenos': [],
-         'sel-line': 236,
-         'sel-line-start': 8324,
-         'selection_end': 8366,
-         'selection_start': 8356},
-        1470191153.482],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             17)],
-          'first-line': 221,
-          'folded-linenos': [],
-          'sel-line': 238,
-          'sel-line-start': 8411,
-          'selection_end': 8431,
-          'selection_start': 8431},
-         1470191160.541],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             17)],
-          'first-line': 221,
-          'folded-linenos': [],
-          'sel-line': 239,
-          'sel-line-start': 8435,
-          'selection_end': 8501,
-          'selection_start': 8491},
-         1470191161.031],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             17)],
-          'first-line': 136,
-          'folded-linenos': [],
-          'sel-line': 141,
-          'sel-line-start': 4184,
-          'selection_end': 4216,
-          'selection_start': 4210},
-         1470278101.822],
-        [loc('main.py'),
-         {'attrib-starts': [],
-          'first-line': 0,
-          'folded-linenos': [],
-          'sel-line': 20,
-          'sel-line-start': 266,
-          'selection_end': 308,
-          'selection_start': 308},
-         1470278114.504],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             17)],
-          'first-line': 113,
-          'folded-linenos': [],
-          'sel-line': 141,
-          'sel-line-start': 4184,
-          'selection_end': 4216,
-          'selection_start': 4210},
-         1470278115.547],
-        [loc('main.py'),
-         {'attrib-starts': [('stackplotTest',
-                             17)],
-          'first-line': 127,
-          'folded-linenos': [],
-          'sel-line': 145,
-          'sel-line-start': 4341,
-          'selection_end': 4363,
-          'selection_start': 4357},
-         1470278117.312],
+         'sel-line': 145,
+         'sel-line-start': 4341,
+         'selection_end': 4363,
+         'selection_start': 4357},
+        1470278117.312],
         [loc('main.py'),
          {'attrib-starts': [('stackplotTest',
                              17)],
@@ -544,10 +505,83 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
           'sel-line-start': 5814,
           'selection_end': 5814,
           'selection_start': 5814},
-         1470794912.453]],
+         1470794912.453],
+        [loc('main.py'),
+         {'attrib-starts': [('parseOtu',
+                             489)],
+          'first-line': 558,
+          'folded-linenos': [],
+          'sel-line': 581,
+          'sel-line-start': 20248,
+          'selection_end': 20331,
+          'selection_start': 20252},
+         1470872467.375],
+        [loc('../../../../../../../Python34/Lib/site-packages/sklearn/utils/validation.py'),
+         {'attrib-starts': [('check_consistent_length',
+                             161)],
+          'first-line': 147,
+          'folded-linenos': [],
+          'sel-line': 175,
+          'sel-line-start': 5814,
+          'selection_end': 5814,
+          'selection_start': 5814},
+         1470872471.313],
+        [loc('main.py'),
+         {'attrib-starts': [('parseOtu',
+                             489)],
+          'first-line': 558,
+          'folded-linenos': [],
+          'sel-line': 581,
+          'sel-line-start': 20248,
+          'selection_end': 20331,
+          'selection_start': 20252},
+         1470872491.271],
+        [loc('../../../../../../../Python34/Lib/site-packages/sklearn/cross_validation.py'),
+         {'attrib-starts': [('_BaseKFold',
+                             225),
+                            ('_BaseKFold.__init__',
+                             229)],
+          'first-line': 212,
+          'folded-linenos': [],
+          'sel-line': 240,
+          'sel-line-start': 7428,
+          'selection_end': 7428,
+          'selection_start': 7428},
+         1470872524.319],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             20)],
+          'first-line': 234,
+          'folded-linenos': [],
+          'sel-line': 239,
+          'sel-line-start': 8364,
+          'selection_end': 8402,
+          'selection_start': 8396},
+         1470879922.273],
+        [loc('main.py'),
+         {'attrib-starts': [('stackplotTest',
+                             20)],
+          'first-line': 306,
+          'folded-linenos': [],
+          'sel-line': 333,
+          'sel-line-start': 11801,
+          'selection_end': 11834,
+          'selection_start': 11825},
+         1470880011.206]],
         20),
         'current-loc': loc('main.py'),
-        'editor-state-list': [(loc('../../../../../../../Program Files (x86)/Wing IDE 5.1/resources/doc/en/TOC.idx'),
+        'editor-state-list': [(loc('../../../../../../../Python34/Lib/site-packages/sklearn/cross_validation.py'),
+                               {'attrib-starts': [('_BaseKFold',
+        225),
+        ('_BaseKFold.__init__',
+         229)],
+                                'first-line': 212,
+                                'folded-linenos': [],
+                                'sel-line': 240,
+                                'sel-line-start': 7428,
+                                'selection_end': 7428,
+                                'selection_start': 7428}),
+                              (loc('../../../../../../../Program Files (x86)/Wing IDE 5.1/resources/doc/en/TOC.idx'),
                                {'displayed-index': 27,
                                 'viewer-state': {'history': [-1,
         27],
@@ -555,28 +589,19 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
         'index': 27,
         'top': 0}}),
                               (loc('main.py'),
-                               {'attrib-starts': [('parseOtu',
-        489)],
-                                'first-line': 548,
+                               {'attrib-starts': [('stackplotTest',
+        20)],
+                                'first-line': 324,
                                 'folded-linenos': [],
-                                'sel-line': 562,
-                                'sel-line-start': 19630,
-                                'selection_end': 19688,
-                                'selection_start': 19688}),
-                              (loc('../../../../../../../Python34/Lib/site-packages/sklearn/utils/validation.py'),
-                               {'attrib-starts': [('check_consistent_length',
-        161)],
-                                'first-line': 147,
-                                'folded-linenos': [],
-                                'sel-line': 175,
-                                'sel-line-start': 5814,
-                                'selection_end': 5814,
-                                'selection_start': 5814})],
-        'has-focus': True,
+                                'sel-line': 335,
+                                'sel-line-start': 11891,
+                                'selection_end': 11909,
+                                'selection_start': 11909})],
+        'has-focus': False,
         'locked': False},
-        [loc('../../../../../../../Program Files (x86)/Wing IDE 5.1/resources/doc/en/TOC.idx'),
-         loc('main.py'),
-         loc('../../../../../../../Python34/Lib/site-packages/sklearn/utils/validation.py')]),
+        [loc('../../../../../../../Python34/Lib/site-packages/sklearn/cross_validation.py'),
+         loc('../../../../../../../Program Files (x86)/Wing IDE 5.1/resources/doc/en/TOC.idx'),
+         loc('main.py')]),
                                'open_files': [u'../../../../../../../Program Files (x86)/Wing IDE 5.1/resources/doc/en/TOC.idx',
         u'main.py']},
         'saved_notebook_display': None,
@@ -594,12 +619,13 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                          1900,
                          1008)}]}
 guimgr.recent-documents = [loc('main.py'),
-                           loc('../../../../../../../Python34/Lib/site-packages/sklearn/utils/validation.py')]
+                           loc('../../../../../../../Python34/Lib/site-packages/sklearn/cross_validation.py')]
 proj.build-cmd = {None: ('default',
                          None)}
 proj.env-vars = {None: ('default',
                         [u''])}
 search.search-history = [u'diversity',
+                         u'identi',
                          u'family',
                          u'identified',
                          u'genus heat',
