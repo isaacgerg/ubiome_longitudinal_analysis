@@ -587,8 +587,12 @@ def parseOtu():
     
     # Predict my data
     # Read in my data file
+    myOtu = OTU(jsonFilename)
+    
     # Get family distribution
-    # Merge family set
+    otuDistriution = myOtu.getFamilyDistribution()
+    
+    
     # Do LDA fit
 
     return
@@ -599,7 +603,7 @@ if __name__ == "__main__":
     matplotlib.style.use('https://raw.githubusercontent.com/isaacgerg/matplotlibrc/master/matplotlibrc.txt')
     
     # TODO rename
-    stackplotTest()
+    #stackplotTest()
     
     parseOtu()
    
