@@ -16,6 +16,8 @@ import datetime
 from cycler import cycler
 
 import sklearn.manifold
+
+import otu
     
     
 def stackplotTest():
@@ -583,11 +585,11 @@ def parseOtu():
     clf = sklearn.svm.SVC(kernel='linear', C=1e-1)
     n_samples = inputMat.shape[1]
     cv = sklearn.cross_validation.KFold(n_samples,n_folds=8,shuffle=True)
-    scores = sklearn.cross_validation.cross_val_score(clf, inputMat.T, outputVec, cv=cv)    
+    scores = sklearn.cross_validation.cross_val_score(clf, inputMat.T, outputVec, cv=cv)
     
     # Predict my data
     # Read in my data file
-    myOtu = OTU(jsonFilename)
+    myOtu = otu.OTU(r'C:\Users\Isaac\Desktop\github\ubiome\ubiome_longitudinal_analysis\sample_data\01112016.json')
     
     # Get family distribution
     myOtu.addTaxonomy('family', families)
