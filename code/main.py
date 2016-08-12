@@ -590,10 +590,11 @@ def parseOtu():
     myOtu = OTU(jsonFilename)
     
     # Get family distribution
-    otuDistriution = myOtu.getFamilyDistribution()
-    
+    myOtu.addTaxonomy('family', families)
+    myOtu.getDistribution('family')
     
     # Do LDA fit
+    # run predictor
 
     return
 
