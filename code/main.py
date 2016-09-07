@@ -20,9 +20,7 @@ import sklearn.manifold
 import otu
     
     
-def stackplotTest():
-
-    
+def ubiomeAnalysis():
     #---------------------------------------------------------------------------
     # Directory of where your json files are
     baseDir = r'..\sample_data'
@@ -75,6 +73,31 @@ def stackplotTest():
                 if kk['tax_rank'] == 'phylum' and kk['tax_name'] == k:
                     p[kk['tax_name']][c] =  kk['count_norm']/10000
             c += 1
+
+    otuList = []
+    for k in fn:
+        myOtu = otu.OTU(k)
+        otuList.append(myOtu)
+    
+    # Get phyla distribution
+    phylum = []
+    for k in otuList:
+        phylum += k.getTaxonomy('phylum')[0]
+    phylum = list(set(phylum))
+
+    numPhylum = len(phylum)    
+    numFiles = len(fn)
+    r = np.zeros((numPhylum, numFiles))
+    for k, fileIdx in zip(otuList, range(numFiles)):
+        ph = k.getTaxonomy('phylum')
+        idx = None
+        for p, d in zip(ph[0], ph[1]):
+            for pp,i in zip(phylum, range(numPhylum)):
+                if p == pp:
+                    r[i, fileIdx] = d
+                    break
+    
+    
 
     r = []
     phyla = sorted(list(phyla))
@@ -589,10 +612,12 @@ def parseOtu():
     
     # Predict my data
     # Read in my data file
-    myOtu = otu.OTU(r'C:\Users\Isaac\Desktop\github\ubiome\ubiome_longitudinal_analysis\sample_data\01112016.json')
+    myOtu = otu.OTU(r'..\sample_data\01112016.json')
     
     # Get family distribution
-    myOtu.addTaxonomy('family', families)
+    gen = myOtu.getTaxonomy('genus')    
+    
+    myOtu.mergeTaxonomy('family', families)
     myOtu.getDistribution('family')
     
     # Do LDA fit
@@ -605,8 +630,7 @@ if __name__ == "__main__":
     #matplotlib.style.use('https://raw.githubusercontent.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/master/styles/matplotlibrc')
     matplotlib.style.use('https://raw.githubusercontent.com/isaacgerg/matplotlibrc/master/matplotlibrc.txt')
     
-    # TODO rename
-    #stackplotTest()
+    ubiomeAnalysis()
     
     parseOtu()
    

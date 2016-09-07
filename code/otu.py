@@ -1,5 +1,8 @@
 import json
 import datetime
+from collections import defaultdict
+
+import numpy as np
 
 def tree(): return defaultdict(tree)
 
@@ -17,31 +20,23 @@ class OTU:
         
         lst = self._json['ubiome_bacteriacounts']
         
-        self._phyla = []
-        
-    def getPhyla(self):
-        if self._phyla is not []:
-            return self._phyla
-           
-        lst = self._json['ubiome_bacteriacounts']
+        # form Tree
         for k in lst:
-            if k['tax_rank'] == 'phylum':
-                self._phyla.append(k['tax_name'])
-
-        self._phyla = list(set(self._phyla))
+            self._tree[str(k['taxon'])] = (k['tax_rank'], k['tax_name'], k['count_norm']/1000000, str(k['parent']))        
         
-        #return self._phyla
+    def getTaxonomy(self, taxon='genus'):   
+        taxNames = []        
+        taxCounts = defaultdict(lambda: 0)
+        for k in self._tree.keys():            
+            if self._tree[k][0] == taxon:
+                #taxNames.append(self._tree[k][2])
+                taxCounts[self._tree[k][1]] += self._tree[k][2]
+
+        taxNames = list(taxCounts.keys())
     
-        # Get counts for each phyla from each dataset
-        N = len(fn)
-        p = {}
-        for k in phyla:
-            p[k] = np.zeros(N)
-            c = 0
-            for f in fn:
-                r = open(f).read()
-                lst = json.loads(r)['ubiome_bacteriacounts'] 
-                for kk in lst:
-                    if kk['tax_rank'] == 'phylum' and kk['tax_name'] == k:
-                        p[kk['tax_name']][c] =  kk['count_norm']/10000
-                c += 1    
+        N = len(taxNames)
+        r = np.zeros(N)
+        for taxName,idx in zip(taxNames,range(N)):
+            r[idx] = taxCounts[taxName]
+            
+        return (taxNames, r)
