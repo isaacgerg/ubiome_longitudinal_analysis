@@ -606,7 +606,7 @@ if __name__ == "__main__":
     matplotlib.style.use('https://raw.githubusercontent.com/isaacgerg/matplotlibrc/master/matplotlibrc.txt')
     
     # TODO rename
-    #stackplotTest()
+    stackplotTest()
     
     parseOtu()
    
