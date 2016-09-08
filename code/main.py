@@ -91,9 +91,9 @@ def ubiomeAnalysis():
     for k, fileIdx in zip(otuList, range(numFiles)):
         ph = k.getTaxonomy('phylum')
         idx = None
-        for p, d in zip(ph[0], ph[1]):
+        for ppp, d in zip(ph[0], ph[1]):
             for pp,i in zip(phylum, range(numPhylum)):
-                if p == pp:
+                if ppp == pp:
                     r[i, fileIdx] = d
                     break
     
