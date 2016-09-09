@@ -21,4 +21,6 @@ Genus Heatmap
 
 ![Alt text](https://raw.githubusercontent.com/isaacgerg/ubiome_longitudinal_analysis/master/sample_data/Percentage%20of%20Methane%20Producing%20Strains.png "IBS-C Stains")
 
+![Alt text](https://raw.githubusercontent.com/isaacgerg/ubiome_longitudinal_analysis/master/sample_data/simpsons%20diversity%20index.png "Diversity")\
 
+![Alt text](https://raw.githubusercontent.com/isaacgerg/ubiome_longitudinal_analysis/master/sample_data/Firmicutes%20to%20Bacteroidetes%20Ratio.png "FB Ratio")\
