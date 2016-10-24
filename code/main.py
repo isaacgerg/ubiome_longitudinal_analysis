@@ -24,6 +24,7 @@ def ubiomeAnalysis():
     #---------------------------------------------------------------------------
     # Directory of where your json files are
     baseDir = r'..\sample_data'
+    baseDir = r'C:\Users\Isaac\Desktop\New folder (2)'
     #---------------------------------------------------------------------------
     
     # Get all applicable files
@@ -211,10 +212,24 @@ def ubiomeAnalysis():
     plt.clf()
     plt.title('Percentage of Probiotic Strains')
     c = []
+    
+    if 'Actinobacteria-Bifidobacteriaceae-Bifidobacterium' not in p.keys():
+        p['Actinobacteria-Bifidobacteriaceae-Bifidobacterium'] = np.zeros(N)
     c.append(p['Actinobacteria-Bifidobacteriaceae-Bifidobacterium'])
+        
+    if 'Firmicutes-Lactobacillaceae-Lactobacillus' not in p.keys():
+        p['Firmicutes-Lactobacillaceae-Lactobacillus'] = np.zeros(N)
     c.append(p['Firmicutes-Lactobacillaceae-Lactobacillus'])
+                        
+    if 'Firmicutes-Leuconostocaceae-Leuconostoc' not in p.keys():
+        p['Firmicutes-Leuconostocaceae-Leuconostoc'] = np.zeros(N)
     c.append(p['Firmicutes-Leuconostocaceae-Leuconostoc'])
+                            
+    if 'Firmicutes-Streptococcaceae-Lactococcus' not in p.keys():
+        p['Firmicutes-Streptococcaceae-Lactococcus'] = np.zeros(N)
     c.append(p['Firmicutes-Streptococcaceae-Lactococcus'])
+                            
+
     plt.stackplot(rr, c)
     plt.legend(['Actinobacteria-Bifidobacteriaceae-Bifidobacterium', 'Firmicutes-Lactobacillaceae-Lactobacillus', 'Firmicutes-Leuconostocaceae-Leuconostoc', 'Firmicutes-Streptococcaceae-Lactococcus'], \
                bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
@@ -222,6 +237,8 @@ def ubiomeAnalysis():
     plt.savefig(os.path.join(baseDir, 'Percentage of Probiotic Strains.png'))
     
     plt.clf()
+    if 'Euryarchaeota-Methanobacteriaceae-Methanosphaera' not in p.keys():
+        p['Euryarchaeota-Methanobacteriaceae-Methanosphaera'] = np.zeros(N)
     plt.title('Percentage of Methane Producing Strains Connected to SIBO')    
     plt.plot(rr, p['Euryarchaeota-Methanobacteriaceae-Methanosphaera'])  #p['Euryarchaeota-Methanobacteriaceae-Methanobrevibacter']);
     plt.xlabel('Sample Date')
