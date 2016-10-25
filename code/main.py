@@ -24,7 +24,7 @@ def ubiomeAnalysis():
     #---------------------------------------------------------------------------
     # Directory of where your json files are
     baseDir = r'..\sample_data'
-    baseDir = r'C:\Users\Isaac\Desktop\New folder (2)'
+    #baseDir = r'C:\Users\Isaac\Desktop\New folder (2)'
     #---------------------------------------------------------------------------
     
     # Get all applicable files
