@@ -24,11 +24,11 @@ def ubiomeAnalysis():
     #---------------------------------------------------------------------------
     # Directory of where your json files are
     baseDir = r'..\sample_data'
-    #baseDir = r'C:\Users\Isaac\Desktop\New folder (2)'
     #---------------------------------------------------------------------------
     
     # Get all applicable files
-    fn = glob.glob(os.path.join(baseDir,'*.json'))
+    fn = glob.glob(os.path.join(baseDir,'*gut*.json'))
+    fn += glob.glob(r'C:\Users\Isaac\Desktop\github\ubiome\ubiome_longitudinal_analysis\sample_data\*.json')
     
     # Sort files by time
     samplingTime = []
@@ -526,6 +526,8 @@ def ubiomeAnalysis():
     plt.xlabel('Sample Date')
     plt.ylim([0, 100])
     plt.savefig(os.path.join(baseDir, 'percent of species identified.png'))
+    
+    print('done w plots')
     
     return
 
