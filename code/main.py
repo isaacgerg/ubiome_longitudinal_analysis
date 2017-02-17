@@ -16,9 +16,89 @@ import datetime
 from cycler import cycler
 
 import sklearn.manifold
+import seaborn as sns
+
 
 import otu
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------
+#
+def plotCorr(df, title='', corr_type=''):
+    if True:     
+        a = scipy.cluster.hierarchy.fclusterdata(df.values.T, 0.5)
+        a = np.argsort(a)
+        
+        lang_names = df.columns.tolist()
+        numCols = len(lang_names)
+        tick_indices = np.arange(0.0, len(lang_names) + 0.5)
+        plt.figure()
+        plt.imshow(df[a].corr(), cmap='RdBu', vmin=-1, vmax=1, extent=[0,numCols,0,numCols])
+        colorbar = plt.colorbar()
+        colorbar.set_label(corr_type)
+        plt.title(title)
+        plt.xticks(tick_indices, lang_names, rotation='vertical')
+        plt.yticks(tick_indices, lang_names)
+        plt.show() 
     
+
+
+    return
+    
+#-----------------------------------------------------------------------------------------------------------------------------------------------------
+def ubiomeAnalysisPandas():
+    import pandas as pd
+    import json
+    
+    
+    #matplotlib.style.use('https://raw.githubusercontent.com/isaacgerg/matplotlibrc/master/matplotlibrc.txt')    
+    
+    inputDir = r'..\sample_data'
+    
+    files = glob.glob(os.path.join(inputDir, '*.json'))
+    
+    df = None
+    for ki, k in enumerate(files):
+        j = json.load(open(k))
+        json.dumps(j['ubiome_bacteriacounts'])
+        tmp_df = pd.read_json(json.dumps(j['ubiome_bacteriacounts']), orient='records')  
+        
+        del tmp_df['count']
+        del tmp_df['parent']
+        del tmp_df['taxon']
+        
+        #tmp_df = pd.read_csv(k, usecols=['tax_name', 'tax_rank', 'count_norm'])
+        tmp_df['count_norm'] = tmp_df['count_norm'].astype('int')
+        tmp_df = tmp_df[1:]
+        tmp_df['name'] = tmp_df['tax_rank'] + '_' + tmp_df['tax_name']
+        tmp_df.set_index('name')
+        tmp_df['count_norm'] = tmp_df['count_norm'].astype('float')/tmp_df['count_norm'][1]
+    
+        tmp_df = tmp_df.transpose()
+        tmp_df = tmp_df.ix[[0,3],:]
+        tmp_df.columns = tmp_df.ix[1,:]
+        tmp_df = tmp_df.ix[0:1,:]        
+        tmp_df['sample_num'] = ki
+        
+        tmp_df = tmp_df.set_index(['sample_num'])
+        tmp_df
+        if df is None:
+            df = tmp_df
+        else:
+            df = pd.concat([df,tmp_df], axis=0, ignore_index=False)
+    
+        df = df.fillna(0)
+    #     
+    
+    filter_col = [col for col in list(df) if col.startswith('genus')]
+    plotCorr(df[filter_col], title='Genii Correlation')      
+    
+    filter_col = [col for col in list(df) if col.startswith('phy')]
+    plotCorr(df[filter_col], title='Phyla Correlation')
+    
+    filter_col = [col for col in list(df) if col.startswith('family')]
+    plotCorr(df[filter_col], title='Family Correlation')    
+    
+    print('Done')
     
 def ubiomeAnalysis():
     #---------------------------------------------------------------------------
@@ -647,9 +727,11 @@ def parseOtu():
 if __name__ == "__main__":
     # https://raw.githubusercontent.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/master/styles/matplotlibrc
     #matplotlib.style.use('https://raw.githubusercontent.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/master/styles/matplotlibrc')
-    matplotlib.style.use('https://raw.githubusercontent.com/isaacgerg/matplotlibrc/master/matplotlibrc.txt')
+    #matplotlib.style.use('https://raw.githubusercontent.com/isaacgerg/matplotlibrc/master/matplotlibrc.txt')
     
-    ubiomeAnalysis()
+    ubiomeAnalysisPandas()
+    
+    #ubiomeAnalysis()
     
     parseOtu()
    
