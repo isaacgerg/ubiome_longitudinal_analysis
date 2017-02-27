@@ -23,7 +23,7 @@ import otu
 def ubiomeAnalysis():
     #---------------------------------------------------------------------------
     # Directory of where your json files are
-    baseDir = r'..\sample_data'
+    baseDir = r'..\data1'
     #baseDir = r'C:\Users\Isaac\Desktop\New folder (2)'
     #---------------------------------------------------------------------------
     
