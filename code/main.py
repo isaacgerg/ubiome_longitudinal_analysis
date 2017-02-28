@@ -24,23 +24,24 @@ import otu
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 #
 def plotCorr(df, title='', corr_type=''):
-    if True:     
-        a = scipy.cluster.hierarchy.fclusterdata(df.values.T, 0.5)
-        a = np.argsort(a)
-        
-        lang_names = df.columns.tolist()
-        numCols = len(lang_names)
-        tick_indices = np.arange(0.0, len(lang_names) + 0.5)
-        plt.figure()
-        plt.imshow(df[a].corr(), cmap='RdBu', vmin=-1, vmax=1, extent=[0,numCols,0,numCols])
-        colorbar = plt.colorbar()
-        colorbar.set_label(corr_type)
-        plt.title(title)
-        plt.xticks(tick_indices, lang_names, rotation='vertical')
-        plt.yticks(tick_indices, lang_names)
-        plt.show() 
+    a = scipy.cluster.hierarchy.fclusterdata(df.values.T, 0.5)
+    a = np.argsort(a)
     
-
+    lang_names = df.columns.tolist()
+    numCols = len(lang_names)
+    idx = lang_names[0].find('_')
+    lang_names = [elem[idx+1:] for elem in lang_names]
+    tick_indices = np.arange(0.0, len(lang_names)) + 0.5
+    plt.figure()
+    fig = matplotlib.pyplot.gcf()
+    fig.set_size_inches(16,9)    
+    plt.imshow(df[a].corr(), cmap='RdBu_r', vmin=-1, vmax=1, extent=[0,numCols,0,numCols])
+    colorbar = plt.colorbar()
+    colorbar.set_label(corr_type)
+    plt.title(title)
+    plt.grid(False)
+    plt.xticks(tick_indices, lang_names, rotation='vertical', fontsize=5)
+    plt.yticks(tick_indices, lang_names, fontsize=5)
 
     return
     
@@ -59,6 +60,9 @@ def ubiomeAnalysisPandas():
     df = None
     for ki, k in enumerate(files):
         j = json.load(open(k))
+
+        samplingTime = j['sampling_time']
+        
         json.dumps(j['ubiome_bacteriacounts'])
         tmp_df = pd.read_json(json.dumps(j['ubiome_bacteriacounts']), orient='records')  
         
@@ -80,39 +84,64 @@ def ubiomeAnalysisPandas():
         tmp_df['sample_num'] = ki
         
         tmp_df = tmp_df.set_index(['sample_num'])
-        tmp_df
+        tmp_df['sampling_time'] = datetime.datetime(year = int(samplingTime[0:4]), month=int(samplingTime[5:7]), day = int(samplingTime[8:10]))
         if df is None:
             df = tmp_df
         else:
             df = pd.concat([df,tmp_df], axis=0, ignore_index=False)
     
-        df = df.fillna(0)
-    #     
+        df = df.fillna(0)        
+    #
     
-    filter_col = [col for col in list(df) if col.startswith('genus')]
-    plotCorr(df[filter_col], title='Genii Correlation')      
+    df = df.set_index('sampling_time')
+    df = df.sort()
     
     filter_col = [col for col in list(df) if col.startswith('phy')]
-    plotCorr(df[filter_col], title='Phyla Correlation')
+    plotCorr(df[filter_col], title='Phylum Correlation')    
+    plt.savefig(r'..\results\phylum_correlation.png', dpi = 400)
+    
+    filter_col = [col for col in list(df) if col.startswith('genus')]
+    plotCorr(df[filter_col], title='Genus  Correlation')   
+    plt.savefig(r'..\results\genus_correlation.png', dpi = 400)
     
     filter_col = [col for col in list(df) if col.startswith('family')]
     plotCorr(df[filter_col], title='Family Correlation')    
+    plt.savefig(r'..\results\family_correlation.png', dpi = 400)
+    
+    filter_col = [col for col in list(df) if col.startswith('species')]
+    plotCorr(df[filter_col], title='Specie Correlation')    
+    plt.savefig(r'..\results\specie_correlation.png', dpi = 400)    
+    
+    filter_col = [col for col in list(df) if col.startswith('class')]
+    plotCorr(df[filter_col], title='Class Correlation')    
+    plt.savefig(r'..\results\class_correlation.png', dpi = 400)      
+    
+    # Extract month
+    df['month'] = df.index.map(lambda x: x.month)
+    
+    # Regress class against month to look for seasonal variation
+    from pandas.stats.api import ols
+    filter_col = [col for col in list(df) if col.startswith('phy')]
+    res = ols(y=df['month'], x=df[filter_col])        
+    
+    # BSS type
+    df.set_value('2015-06-23', 'bss', 10)
+    
+    # Augment BSS type when sample was taken to taken
+    # regress on stool type vs class
+    # Augment meds
     
     print('Done')
     
 def ubiomeAnalysis():
     #---------------------------------------------------------------------------
     # Directory of where your json files are
-<<<<<<< HEAD
-    baseDir = r'..\data1'
-    #baseDir = r'C:\Users\Isaac\Desktop\New folder (2)'
-=======
     baseDir = r'..\sample_data'
->>>>>>> origin/master
+
     #---------------------------------------------------------------------------
     
     # Get all applicable files
-    fn = glob.glob(os.path.join(baseDir,'*gut*.json'))
+    #fn = glob.glob(os.path.join(baseDir,'*gut*.json'))
     fn += glob.glob(r'C:\Users\Isaac\Desktop\github\ubiome\ubiome_longitudinal_analysis\sample_data\*.json')
     
     # Sort files by time
