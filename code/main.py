@@ -194,7 +194,7 @@ def ubiomeAnalysisPandas():
     # TODO make into function
     pValues = []
     for k in df.columns:
-        c = ols(y=df['nexium'], x=df[k])
+        c = ols(y=df['zoloft'], x=df[k])
         pValues.append(c.p_value.x)
     
     # Show top 50 pValues
@@ -214,8 +214,8 @@ def ubiomeAnalysisPandas():
     plt.yticks(y_pos, objects)
     plt.xlabel('p value')    
     plt.xlabel('Tax')   
-    plt.title('p Value of Nexium ~ Tax')
-    plt.savefig(r'..\results\nexium_correlation.png', dpi = 400) 
+    plt.title('p Value of Zoloft ~ Tax')
+    plt.savefig(r'..\results\zoloft_p_values.png', dpi = 400) 
     plt.close()
     
     #-----------------------------------------------------------------------------------------------
