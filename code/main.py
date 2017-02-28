@@ -8,6 +8,7 @@ import time
 import numpy as np
 import scipy as sp
 import scipy.signal
+import scipy.stats
 
 import matplotlib
 import matplotlib.pyplot as plt
@@ -122,9 +123,23 @@ def ubiomeAnalysisPandas():
     df.set_value('2016-11-12', 'ubiome_wellness_match', 96.9)
     
     # Regress on wellness match
-    #filter_col = [col for col in list(df) if col.startswith('phy')]
-    from pandas.stats.api import ols
-    res = ols(y=df['ubiome_wellness_match'], x=df[['phylum_Actinobacteria', 'phylum_Bacteroidetes', 'phylum_Fibrobacteres', 'phylum_Firmicutes', 'phylum_Fusobacteria',  'phylum_Proteobacteria', 'phylum_Verrucomicrobia']])   
+    filter_col = [col for col in list(df) if col.startswith('phy')]
+    #from pandas.stats.api import ols
+    rVals = []
+    numCols = len(filter_col)
+    for col in filter_col:
+        # only keep r-values and p-values are not reliable for sample sizes < 500 
+        # Citation: https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.stats.pearsonr.html
+        rVals.append(sp.stats.pearsonr(df[col], df['ubiome_wellness_match'])[0])
+    
+    plt.figure()
+    plt.bar(np.arange(0,numCols), rVals, tick_label=filter_col)
+    plt.xticks(rotation='vertical')
+    plt.ylim(-1,1)
+    plt.title('Correlation Between Ubiome Wellness Match and Phyla')
+    plt.show()
+    plt.close()
+    #res = ols(y=df['ubiome_wellness_match'], x=df[['phylum_Actinobacteria', 'phylum_Bacteroidetes', 'phylum_Fibrobacteres', 'phylum_Firmicutes', 'phylum_Fusobacteria',  'phylum_Proteobacteria', 'phylum_Verrucomicrobia']])   
     
     #import statsmodels
     #model = statsmodels.regression.linear_model.OLS('month ~ phylum_Actinobacteria', df)    
@@ -190,18 +205,17 @@ def ubiomeAnalysisPandas():
     plt.close()
     
     #-----------------------------------------------------------------------------------------------
-    # Regress against nexium for all
+    # Correlation against nexium for all
     # TODO make into function, add subplot with coef
-    pValues = []
+    rValues = []
     for k in df.columns:
-        c = ols(y=df['zoloft'], x=df[k])
-        pValues.append(c.p_value.x)
+        #c = ols(y=df['zoloft'], x=df[k])
+        rValues.append(sp.stats.pearsonr(df['zoloft'], df[k])[0])
     
     # Show top 50 pValues
-    pValues = np.array(pValues)
-    idx = np.argsort(pValues)
-    idx = idx[:50]
-    idx = idx[::-1]
+    rValues = np.array(rValues)
+    idx = np.argsort(np.abs(rValues))
+    idx = idx[-50:]
     
     objects = df.columns[idx]
     y_pos = np.arange(len(objects))
@@ -209,13 +223,13 @@ def ubiomeAnalysisPandas():
     plt.figure()
     fig = matplotlib.pyplot.gcf()
     fig.set_size_inches(16,9)        
-    plt.barh(y_pos, pValues[idx], align='center', alpha=0.5)
-    plt.xlim(0, 0.06)
+    plt.barh(y_pos, rValues[idx], align='center', alpha=0.5)
+    plt.xlim(-1,1)
     plt.yticks(y_pos, objects)
     plt.xlabel('p value')    
     plt.xlabel('Tax')   
-    plt.title('p Value of Zoloft ~ Tax')
-    plt.savefig(r'..\results\zoloft_p_values.png', dpi = 400) 
+    plt.title('r Value of Zoloft vs Tax')
+    plt.savefig(r'..\results\zoloft_r_values.png', dpi = 400) 
     plt.close()
     
     #-----------------------------------------------------------------------------------------------
