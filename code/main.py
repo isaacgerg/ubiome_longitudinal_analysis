@@ -47,13 +47,22 @@ def plotCorr(df, title='', corr_type=''):
     
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 def ubiomeAnalysisPandas():
-    import pandas as pd
+    #-----------------------------------------------------------------------------------------------
+    # imports
+    # system libs
     import json
     
+    # external libs
+    import pandas as pd
+    from pandas.stats.api import ols
+    #-----------------------------------------------------------------------------------------------
     
     #matplotlib.style.use('https://raw.githubusercontent.com/isaacgerg/matplotlibrc/master/matplotlibrc.txt')    
     
     inputDir = r'..\sample_data'
+    
+    #-----------------------------------------------------------------------------------------------
+    # Read in data and parse into dataframe
     
     files = glob.glob(os.path.join(inputDir, '*.json'))
     
@@ -75,7 +84,7 @@ def ubiomeAnalysisPandas():
         tmp_df = tmp_df[1:]
         tmp_df['name'] = tmp_df['tax_rank'] + '_' + tmp_df['tax_name']
         tmp_df.set_index('name')
-        tmp_df['count_norm'] = tmp_df['count_norm'].astype('float')/tmp_df['count_norm'][1]
+        tmp_df['count_norm'] = tmp_df['count_norm'].astype('float')#/tmp_df['count_norm'][1]
     
         tmp_df = tmp_df.transpose()
         tmp_df = tmp_df.ix[[0,3],:]
@@ -96,37 +105,127 @@ def ubiomeAnalysisPandas():
     df = df.set_index('sampling_time')
     df = df.sort()
     
-    filter_col = [col for col in list(df) if col.startswith('phy')]
+    #-----------------------------------------------------------------------------------------------
+    # ubiome wellness match
+    df.set_value('2015-06-23', 'ubiome_wellness_match', 86)
+    df.set_value('2015-09-10', 'ubiome_wellness_match', 96)
+    df.set_value('2015-11-29', 'ubiome_wellness_match', 91.7)
+    df.set_value('2016-01-11', 'ubiome_wellness_match', 95.3)
+    df.set_value('2016-02-17', 'ubiome_wellness_match', 61.7)
+    df.set_value('2016-03-02', 'ubiome_wellness_match', 76)
+    df.set_value('2016-03-24', 'ubiome_wellness_match', 95.5)
+    df.set_value('2016-05-27', 'ubiome_wellness_match', 89.4)
+    df.set_value('2016-07-13', 'ubiome_wellness_match', 95.1)
+    df.set_value('2016-07-17', 'ubiome_wellness_match', 87.3)
+    df.set_value('2016-07-20', 'ubiome_wellness_match', 88.7)
+    df.set_value('2016-07-28', 'ubiome_wellness_match', 95.4)
+    df.set_value('2016-11-12', 'ubiome_wellness_match', 96.9)
+    
+    # Regress on wellness match
+    #filter_col = [col for col in list(df) if col.startswith('phy')]
+    from pandas.stats.api import ols
+    res = ols(y=df['ubiome_wellness_match'], x=df[['phylum_Actinobacteria', 'phylum_Bacteroidetes', 'phylum_Fibrobacteres', 'phylum_Firmicutes', 'phylum_Fusobacteria',  'phylum_Proteobacteria', 'phylum_Verrucomicrobia']])   
+    
+    #import statsmodels
+    #model = statsmodels.regression.linear_model.OLS('month ~ phylum_Actinobacteria', df)    
+    #-----------------------------------------------------------------------------------------------
+    # Nexium
+    df.set_value('2015-06-23', 'nexium', 0)
+    df.set_value('2015-09-10', 'nexium', 80)
+    df.set_value('2015-11-29', 'nexium', 40)
+    df.set_value('2016-01-11', 'nexium', 40)
+    df.set_value('2016-02-17', 'nexium', 40)
+    df.set_value('2016-03-02', 'nexium', 20)
+    df.set_value('2016-03-24', 'nexium', 0)
+    df.set_value('2016-05-27', 'nexium', 0)
+    df.set_value('2016-07-13', 'nexium', 0)
+    df.set_value('2016-07-17', 'nexium', 0)
+    df.set_value('2016-07-20', 'nexium', 0)
+    df.set_value('2016-07-28', 'nexium', 0)
+    df.set_value('2016-11-12', 'nexium', 40)
+    
+    #filter_col = [col for col in list(df) if col.startswith('phy')]
+    res = ols(y=df['nexium'], x=df[['phylum_Actinobacteria', 'phylum_Bacteroidetes', 'phylum_Fibrobacteres', 'phylum_Firmicutes', 'phylum_Fusobacteria',  'phylum_Proteobacteria', 'phylum_Verrucomicrobia']])   
+    #-----------------------------------------------------------------------------------------------
+    # Zoloft
+    df.set_value('2015-06-23', 'zoloft', 50)
+    df.set_value('2015-09-10', 'zoloft', 100)
+    df.set_value('2015-11-29', 'zoloft', 100)
+    df.set_value('2016-01-11', 'zoloft', 100)
+    df.set_value('2016-02-17', 'zoloft', 100)
+    df.set_value('2016-03-02', 'zoloft', 100)
+    df.set_value('2016-03-24', 'zoloft', 75)
+    df.set_value('2016-05-27', 'zoloft', 75)
+    df.set_value('2016-07-13', 'zoloft', 50)
+    df.set_value('2016-07-17', 'zoloft', 50)
+    df.set_value('2016-07-20', 'zoloft', 50)
+    df.set_value('2016-07-28', 'zoloft', 50)
+    df.set_value('2016-11-12', 'zoloft', 0)    
+    
+    res = ols(y=df['zoloft'], x=df[['phylum_Actinobacteria', 'phylum_Bacteroidetes', 'phylum_Fibrobacteres', 'phylum_Firmicutes', 'phylum_Fusobacteria',  'phylum_Proteobacteria', 'phylum_Verrucomicrobia']])   
+        
+    
+    #-----------------------------------------------------------------------------------------------
+    # Correlation plots
+    filter_col = [col for col in list(df) if col.startswith('phy')] + ['nexium', 'ubiome_wellness_match', 'zoloft']
     plotCorr(df[filter_col], title='Phylum Correlation')    
     plt.savefig(r'..\results\phylum_correlation.png', dpi = 400)
     
-    filter_col = [col for col in list(df) if col.startswith('genus')]
+    filter_col = [col for col in list(df) if col.startswith('genus')] + ['nexium', 'ubiome_wellness_match', 'zoloft']
     plotCorr(df[filter_col], title='Genus  Correlation')   
     plt.savefig(r'..\results\genus_correlation.png', dpi = 400)
     
-    filter_col = [col for col in list(df) if col.startswith('family')]
+    filter_col = [col for col in list(df) if col.startswith('family')] + ['nexium', 'ubiome_wellness_match', 'zoloft']
     plotCorr(df[filter_col], title='Family Correlation')    
     plt.savefig(r'..\results\family_correlation.png', dpi = 400)
     
-    filter_col = [col for col in list(df) if col.startswith('species')]
+    filter_col = [col for col in list(df) if col.startswith('species')] + ['nexium', 'ubiome_wellness_match', 'zoloft']
     plotCorr(df[filter_col], title='Specie Correlation')    
     plt.savefig(r'..\results\specie_correlation.png', dpi = 400)    
     
-    filter_col = [col for col in list(df) if col.startswith('class')]
+    filter_col = [col for col in list(df) if col.startswith('class')] + ['nexium', 'ubiome_wellness_match', 'zoloft']
     plotCorr(df[filter_col], title='Class Correlation')    
-    plt.savefig(r'..\results\class_correlation.png', dpi = 400)      
+    plt.savefig(r'..\results\class_correlation.png', dpi = 400)    
     
+    plt.close()
+    
+    #-----------------------------------------------------------------------------------------------
+    # Regress against nexium for all
+    corrValues = []
+    for k in df.columns:
+        c = df[['zoloft', k]].corr()
+        corrValues.append(c.ix[0,1])
+    
+    # Show top 50 correlations
+    corrValues = np.array(corrValues)
+    idx = np.argsort(np.abs(corrValues))
+    idx = idx[-50:]
+    #idx = idx[::-1]
+    
+    objects = df.columns[idx]
+    y_pos = np.arange(len(objects))
+    
+    plt.figure()
+    fig = matplotlib.pyplot.gcf()
+    fig.set_size_inches(16,9)        
+    plt.barh(y_pos, corrValues[idx], align='center', alpha=0.5)
+    plt.xlim(-1,1)
+    plt.yticks(y_pos, objects)
+    plt.xlabel('Correlation')    
+    plt.savefig(r'..\results\zoloft_correlation.png', dpi = 400) 
+    plt.close()
+    
+    #-----------------------------------------------------------------------------------------------
     # Extract month
     df['month'] = df.index.map(lambda x: x.month)
     
     # Regress class against month to look for seasonal variation
-    from pandas.stats.api import ols
-    filter_col = [col for col in list(df) if col.startswith('phy')]
-    res = ols(y=df['month'], x=df[filter_col])        
     
-    # BSS type
-    df.set_value('2015-06-23', 'bss', 10)
+    #filter_col = [col for col in list(df) if col.startswith('phy')]
+    # I remove 2 of the phylum because they are mostly zero and result in a poorly conditioned inverse matrix
+    res = ols(y=df['month'], x=df[['phylum_Actinobacteria', 'phylum_Bacteroidetes', 'phylum_Fibrobacteres', 'phylum_Firmicutes', 'phylum_Fusobacteria',  'phylum_Proteobacteria', 'phylum_Verrucomicrobia']])  
     
+
     # Augment BSS type when sample was taken to taken
     # regress on stool type vs class
     # Augment meds
