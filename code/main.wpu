@@ -4,19 +4,19 @@
 # Wing IDE project file : User-specific branch                   #
 ##################################################################
 [user attributes]
-debug.breakpoints = {loc('main.py'): {220: (0,
+debug.breakpoints = {loc('main.py'): {223: (0,
         None,
         1,
         0),
-                                      233: (0,
+                                      236: (0,
         None,
         1,
         0),
-                                      711: (0,
+                                      714: (0,
         None,
         1,
         0),
-                                      799: (0,
+                                      802: (0,
         None,
         1,
         0)}}
@@ -160,15 +160,10 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
         -1,
         -1),
                        'attrib-starts': [],
-                       'first-line': 14980,
+                       'first-line': 15077,
                        'folded-linenos': [],
-                       'history': {u'file:C:/Users/Isaac/Desktop/github/ubiome/ubiome_longitudinal_analysis/code/main.py': ['e'\
-        ' = np.linalg.eigvals(df.corr().values)   \n',
-        'e = sp.linalg.eigvals(df.corr().values)      \n',
-        'e\n',
-        'plt.plot(np.abs(e))\n',
-        'U, s, Vt = np.linalg.svd(df.corr())\n',
-        's\n',
+                       'history': {u'file:C:/Users/Isaac/Desktop/github/ubiome/ubiome_longitudinal_analysis/code/main.py': ['s'\
+        '\n',
         'Vt\n',
         'U\n',
         'plt.imshow(S)\n',
@@ -265,7 +260,6 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
         'plt.show()\n',
         'plt.plot(pValues)\n',
         'c[0]\n',
-        'c\n',
         'c.ix(0,1)\n',
         'c.ix[0,1]\n',
         'plt.close()\n',
@@ -304,12 +298,38 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
         "idx]\ny_pos = np.arange(len(objects))\n\nplt.barh(y_pos, corrValues"\
         "[idx], align='center', alpha=0.5)\nplt.xlim(-1,1)\nplt.yticks(y_pos"\
         ", objects)\nplt.xlabel('Correlation')    \nplt.savefig(r'..\\result"\
-        "s\\zoloft_correlation.png', dpi = 400) \nplt.close()\n\n"]},
+        "s\\zoloft_correlation.png', dpi = 400) \nplt.close()\n\n",
+        'c\n',
+        'c.p_value\n',
+        'c.p_value.x\n',
+        "pValues = []\nfor k in df.columns:\n    c = ols(y=df['nexium'], x=d"\
+        "f[k])\n    pValues.append(c.p_value.x)\n\n# Show top 50 correlation"\
+        "s\ncorrValues = np.array(corrValues)\nidx = np.argsort(np.abs(corrV"\
+        "alues))\nidx = idx[-50:]\n#idx = idx[::-1]\n\nobjects = df.columns["\
+        "idx]\ny_pos = np.arange(len(objects))\n\nplt.figure()\nfig = matplo"\
+        "tlib.pyplot.gcf()\nfig.set_size_inches(16,9)        \nplt.barh(y_po"\
+        "s, corrValues[idx], align='center', alpha=0.5)\nplt.xlim(-1,1)\nplt"\
+        ".yticks(y_pos, objects)\nplt.xlabel('p value')    \nplt.savefig(r'."\
+        ".\\results\\zoloft_correlation.png', dpi = 400) \nplt.close()\n\n",
+        "pValues = np.array(pValues)\nidx = np.argsort(pValues)\nidx = idx[:"\
+        "50]\n#idx = idx[::-1]\n\nobjects = df.columns[idx]\ny_pos = np.aran"\
+        "ge(len(objects))\n\nplt.figure()\nfig = matplotlib.pyplot.gcf()\nfi"\
+        "g.set_size_inches(16,9)        \nplt.barh(y_pos, pValues[idx], alig"\
+        "n='center', alpha=0.5)\nplt.xlim(-1,1)\nplt.yticks(y_pos, objects)"\
+        "\nplt.xlabel('p value')    \nplt.savefig(r'..\\results\\nexium_corr"\
+        "elation.png', dpi = 400) \nplt.close()\n\n",
+        "pValues = np.array(pValues)\nidx = np.argsort(pValues)\nidx = idx[:"\
+        "50]\nidx = idx[::-1]\n\nobjects = df.columns[idx]\ny_pos = np.arang"\
+        "e(len(objects))\n\nplt.figure()\nfig = matplotlib.pyplot.gcf()\nfig"\
+        ".set_size_inches(16,9)        \nplt.barh(y_pos, pValues[idx], align"\
+        "='center', alpha=0.5)\nplt.xlim(0, 0.05)\nplt.yticks(y_pos, objects"\
+        ")\nplt.xlabel('p value')    \nplt.savefig(r'..\\results\\nexium_cor"\
+        "relation.png', dpi = 400) \nplt.close()\n\n"]},
                        'launch-id': None,
-                       'sel-line': 14996,
-                       'sel-line-start': 1026769,
-                       'selection_end': 1026769,
-                       'selection_start': 1026769}),
+                       'sel-line': 15093,
+                       'sel-line-start': 1029624,
+                       'selection_end': 1029624,
+                       'selection_start': 1029624}),
                      ('debug-watch',
                       'wide',
                       1,
@@ -565,12 +585,12 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
         'editor-state-list': [(loc('main.py'),
                                {'attrib-starts': [('ubiomeAnalysisPandas',
         48)],
-                                'first-line': 194,
+                                'first-line': 197,
                                 'folded-linenos': [],
-                                'sel-line': 209,
-                                'sel-line-start': 8952,
-                                'selection_end': 8985,
-                                'selection_start': 8985}),
+                                'sel-line': 215,
+                                'sel-line-start': 9151,
+                                'selection_end': 9170,
+                                'selection_start': 9170}),
                               (loc('../../../../../../../Python34/Lib/site-packages/scipy/__init__.py'),
                                {'attrib-starts': [],
                                 'first-line': 31,

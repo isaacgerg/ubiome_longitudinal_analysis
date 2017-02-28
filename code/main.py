@@ -191,16 +191,17 @@ def ubiomeAnalysisPandas():
     
     #-----------------------------------------------------------------------------------------------
     # Regress against nexium for all
-    corrValues = []
+    # TODO make into function
+    pValues = []
     for k in df.columns:
-        c = df[['zoloft', k]].corr()
-        corrValues.append(c.ix[0,1])
+        c = ols(y=df['nexium'], x=df[k])
+        pValues.append(c.p_value.x)
     
-    # Show top 50 correlations
-    corrValues = np.array(corrValues)
-    idx = np.argsort(np.abs(corrValues))
-    idx = idx[-50:]
-    #idx = idx[::-1]
+    # Show top 50 pValues
+    pValues = np.array(pValues)
+    idx = np.argsort(pValues)
+    idx = idx[:50]
+    idx = idx[::-1]
     
     objects = df.columns[idx]
     y_pos = np.arange(len(objects))
@@ -208,11 +209,13 @@ def ubiomeAnalysisPandas():
     plt.figure()
     fig = matplotlib.pyplot.gcf()
     fig.set_size_inches(16,9)        
-    plt.barh(y_pos, corrValues[idx], align='center', alpha=0.5)
-    plt.xlim(-1,1)
+    plt.barh(y_pos, pValues[idx], align='center', alpha=0.5)
+    plt.xlim(0, 0.06)
     plt.yticks(y_pos, objects)
-    plt.xlabel('Correlation')    
-    plt.savefig(r'..\results\zoloft_correlation.png', dpi = 400) 
+    plt.xlabel('p value')    
+    plt.xlabel('Tax')   
+    plt.title('p Value of Nexium ~ Tax')
+    plt.savefig(r'..\results\nexium_correlation.png', dpi = 400) 
     plt.close()
     
     #-----------------------------------------------------------------------------------------------
