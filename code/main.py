@@ -191,7 +191,7 @@ def ubiomeAnalysisPandas():
     
     #-----------------------------------------------------------------------------------------------
     # Regress against nexium for all
-    # TODO make into function
+    # TODO make into function, add subplot with coef
     pValues = []
     for k in df.columns:
         c = ols(y=df['zoloft'], x=df[k])
