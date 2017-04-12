@@ -257,8 +257,8 @@ def ubiomeAnalysis():
     #---------------------------------------------------------------------------
     
     # Get all applicable files
-    #fn = glob.glob(os.path.join(baseDir,'*gut*.json'))
-    fn += glob.glob(r'C:\Users\Isaac\Desktop\github\ubiome\ubiome_longitudinal_analysis\sample_data\*.json')
+    fn = glob.glob(os.path.join(baseDir,'*.json'))
+    #fn += glob.glob(r'C:\Users\Isaac\Desktop\github\ubiome\ubiome_longitudinal_analysis\sample_data\*.json')
     
     # Sort files by time
     samplingTime = []
@@ -877,13 +877,14 @@ def parseOtu():
 if __name__ == "__main__":
     # https://raw.githubusercontent.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/master/styles/matplotlibrc
     #matplotlib.style.use('https://raw.githubusercontent.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/master/styles/matplotlibrc')
-    #matplotlib.style.use('https://raw.githubusercontent.com/isaacgerg/matplotlibrc/master/matplotlibrc.txt')
+    matplotlib.style.use('https://raw.githubusercontent.com/isaacgerg/matplotlibrc/master/matplotlibrc.txt')
+    #matplotlib.style.use(r'https://raw.githubusercontent.com/isaacgerg/health_analysis/master/matplotlibrc.txt')
     
-    ubiomeAnalysisPandas()
+    #ubiomeAnalysisPandas()
     
-    #ubiomeAnalysis()
+    ubiomeAnalysis()
     
-    parseOtu()
+    #parseOtu()
    
     print('Done.')
     
