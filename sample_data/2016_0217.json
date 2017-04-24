@@ -1,5 +1,5 @@
 {
-  "download_time_utc": "2016-08-01T16:09:00Z",
+  "download_time_utc": "2017-04-24T15:50:09Z",
   "sequencing_revision": "39327",
   "site": "gut",
   "sampling_time": "2016-02-17T00:00:00.000Z",
@@ -68,6 +68,14 @@
       "count_norm": 10851,
       "tax_name": "Roseburia",
       "tax_rank": "genus"
+    },
+    {
+      "taxon": 842,
+      "parent": 841,
+      "count": 55,
+      "count_norm": 1089,
+      "tax_name": "Roseburia cecicola",
+      "tax_rank": "species"
     },
     {
       "taxon": 976,
@@ -355,6 +363,14 @@
       "count": 63,
       "count_norm": 1247,
       "tax_name": "Collinsella aerofaciens",
+      "tax_rank": "species"
+    },
+    {
+      "taxon": 78448,
+      "parent": 1678,
+      "count": 6,
+      "count_norm": 118,
+      "tax_name": "Bifidobacterium pullorum",
       "tax_rank": "species"
     },
     {
@@ -734,6 +750,14 @@
       "tax_rank": "genus"
     },
     {
+      "taxon": 447029,
+      "parent": 816,
+      "count": 38,
+      "count_norm": 752,
+      "tax_name": "Bacteroides sp. EBA5-17",
+      "tax_rank": "species"
+    },
+    {
       "taxon": 526524,
       "parent": 1239,
       "count": 20,
@@ -790,12 +814,28 @@
       "tax_rank": "genus"
     },
     {
+      "taxon": 630129,
+      "parent": 1678,
+      "count": 21,
+      "count_norm": 415,
+      "tax_name": "Bifidobacterium kashiwanohense",
+      "tax_rank": "species"
+    },
+    {
       "taxon": 653683,
       "parent": 31979,
       "count": 16,
       "count_norm": 316,
       "tax_name": "Anaerosporobacter",
       "tax_rank": "genus"
+    },
+    {
+      "taxon": 693988,
+      "parent": 35832,
+      "count": 155,
+      "count_norm": 3069,
+      "tax_name": "Bilophila sp. 4_1_30",
+      "tax_rank": "species"
     },
     {
       "taxon": 909929,
@@ -822,6 +862,14 @@
       "tax_rank": "class"
     },
     {
+      "taxon": 910311,
+      "parent": 84111,
+      "count": 7,
+      "count_norm": 138,
+      "tax_name": "Eggerthella sp. HGA1",
+      "tax_rank": "species"
+    },
+    {
       "taxon": 946234,
       "parent": 186813,
       "count": 445,
@@ -838,6 +886,14 @@
       "tax_rank": "family"
     },
     {
+      "taxon": 1150298,
+      "parent": 1407607,
+      "count": 215,
+      "count_norm": 4257,
+      "tax_name": "Fusicatenibacter saccharivorans",
+      "tax_rank": "species"
+    },
+    {
       "taxon": 1217279,
       "parent": 33024,
       "count": 505,
@@ -846,12 +902,52 @@
       "tax_rank": "species"
     },
     {
+      "taxon": 1261636,
+      "parent": 207244,
+      "count": 190,
+      "count_norm": 3762,
+      "tax_name": "Anaerostipes sp. 494a",
+      "tax_rank": "species"
+    },
+    {
+      "taxon": 1365133,
+      "parent": 375288,
+      "count": 5,
+      "count_norm": 99,
+      "tax_name": "Parabacteroides sp. J1502",
+      "tax_rank": "species"
+    },
+    {
+      "taxon": 1407607,
+      "parent": 186803,
+      "count": 289,
+      "count_norm": 5722,
+      "tax_name": "Fusicatenibacter",
+      "tax_rank": "genus"
+    },
+    {
       "taxon": 1470349,
       "parent": 128827,
       "count": 9,
       "count_norm": 178,
       "tax_name": "Candidatus Stoquefichus",
       "tax_rank": "genus"
+    },
+    {
+      "taxon": 1472416,
+      "parent": 574697,
+      "count": 31,
+      "count_norm": 613,
+      "tax_name": "Butyricimonas sp. JCM 18676",
+      "tax_rank": "species"
+    },
+    {
+      "taxon": 1472417,
+      "parent": 574697,
+      "count": 31,
+      "count_norm": 613,
+      "tax_name": "Butyricimonas sp. JCM 18677",
+      "tax_rank": "species"
     },
     {
       "taxon": 1481960,
