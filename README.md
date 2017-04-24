@@ -28,3 +28,8 @@ Genus Heatmap
 ![Alt text](https://github.com/isaacgerg/ubiome_longitudinal_analysis/raw/master/sample_data/bottom%2010%20species%20percent%20of%20sample%20-%20stacked.png "bottom 10 species percent of sample - stacked")
 
 ![Alt text](https://raw.githubusercontent.com/isaacgerg/ubiome_longitudinal_analysis/master/sample_data/family%20similarity%20to%20median.png "Family Similarity to Median")
+
+![Alt text](https://raw.githubusercontent.com/isaacgerg/ubiome_longitudinal_analysis/master/sample_data/percent%20of%20genii%20identified.png "Percent of genii identified")
+
+![Alt text](https://raw.githubusercontent.com/isaacgerg/ubiome_longitudinal_analysis/master/sample_data/percent%20of%20species%20identified.png "Percent of specifies identified")
+
