@@ -1,6 +1,8 @@
 # Ubiome Longitudinal Analysis
 Generates a set of plots showing ubiome data over time.
 
+NOTE: I updated to matplotlib 2.0 and have yet to change my matplotlibrc file.  So, some of the plots are not as pretty as they once were.
+
 Genus Heatmap
 
 ![Alt text](https://raw.githubusercontent.com/isaacgerg/ubiome_longitudinal_analysis/master/sample_data/genus%20heatmap.png "Genus Heatmap")
