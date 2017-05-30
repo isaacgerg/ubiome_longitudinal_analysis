@@ -2,3 +2,5 @@
 *.pyc
 /code/__pycache__
 *.wpu
+others
+isaac

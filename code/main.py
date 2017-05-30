@@ -280,6 +280,11 @@ def ubiomeAnalysis():
     samplingTime = [samplingTime[i] for i in order]
     rr = [rr[i] for i in order]
     
+    # Sample names:
+    sampleNames = []
+    for k in fn:
+        sampleNames.append(os.path.basename(k[:-5]))
+    
     phyla = []
     for f in fn:
         r = open(f).read()
@@ -484,17 +489,19 @@ def ubiomeAnalysis():
     plt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cmap('Blues', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); plt.colorbar()
     plt.yticks(np.arange(r.shape[0]), genii, size='xx-small')
     plt.xlabel('Sample Number'); plt.grid(False)
+    plt.xticks(np.arange(r.shape[1]), sampleNames, rotation = 'vertical', size='xx-small')
     plt.title('Genus Heatmap [Percent]')
     plt.savefig(os.path.join(baseDir, 'genus heatmap.png'))
-    plt.close()
+    plt.close('all')
     
     plt.clf() 
-    plt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cmap('cubehelix_r', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); plt.colorbar()
+    plt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cmap('afmhot_r', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); plt.colorbar()
     plt.yticks(np.arange(r.shape[0]), genii, size='xx-small')
     plt.xlabel('Sample Number'); plt.grid(False)
+    plt.xticks(np.arange(r.shape[1]), sampleNames, rotation = 'vertical', size='xx-small')
     plt.title('Genus Heatmap [Percent]')
     plt.savefig(os.path.join(baseDir, 'genus heatmap - alt colormap.png'))
-    plt.close()
+    plt.close('all')
     
     plt.clf()
     almPlot = r - np.median(r, axis=1).reshape(r.shape[0],1)
@@ -688,6 +695,24 @@ def ubiomeAnalysis():
         for kk in species:
             r.append(p[kk][k])
     r = np.reshape(r, (len(species), N), order='F')   
+    
+    plt.clf() 
+    plt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cmap('Blues', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); plt.colorbar()
+    plt.yticks(np.arange(r.shape[0]), species, size='xx-small')
+    plt.xlabel('Sample Number'); plt.grid(False)
+    plt.xticks(np.arange(r.shape[1]), sampleNames, rotation = 'vertical', size='xx-small')
+    plt.title('Specie Heatmap [Percent]')
+    plt.savefig(os.path.join(baseDir, 'specie heatmap.png'))
+    plt.close()    
+    
+    plt.clf() 
+    plt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cmap('cubehelix_r', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); plt.colorbar()
+    plt.yticks(np.arange(r.shape[0]), genii, size='xx-small')
+    plt.xlabel('Sample Number'); plt.grid(False)
+    plt.xticks(np.arange(r.shape[1]), sampleNames, rotation = 'vertical', size='xx-small')
+    plt.title('Genus Heatmap [Percent]')
+    plt.savefig(os.path.join(baseDir, 'genus heatmap - alt colormap.png'))
+    plt.close()    
     
 
     # Show pathogens
