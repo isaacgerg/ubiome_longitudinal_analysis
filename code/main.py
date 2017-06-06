@@ -17,7 +17,7 @@ import datetime
 from cycler import cycler
 
 import sklearn.manifold
-import seaborn as sns
+#import seaborn as sns
 
 
 import otu
@@ -501,6 +501,32 @@ def ubiomeAnalysis():
     plt.xticks(np.arange(r.shape[1]), sampleNames, rotation = 'vertical', size='xx-small')
     plt.title('Genus Heatmap [Percent]')
     plt.savefig(os.path.join(baseDir, 'genus heatmap - alt colormap.png'))
+    plt.close('all')
+    
+    # Boxplot
+    plt.clf()
+    fig = matplotlib.pyplot.gcf()
+    fig.set_size_inches(9,16)       
+    plt.rc('lines', **{'marker':None})
+    plt.grid(True)
+    data = r.copy()/100    
+    data = np.log10(data) 
+    data[np.isinf(data)] = np.nan    
+    idx = np.nanmedian(data.T, axis=0).argsort()    
+    data = data[idx, :]    
+    newGenii = []
+    z = []
+    for k in idx:
+        newGenii.append(genii[k])
+    for k in range(data.shape[0]):
+        tmp = data.T[:,k]
+        tmp = tmp[np.isfinite(tmp)]        
+        z.append(tmp)
+    plt.boxplot(z, notch = False, vert = False, whis=[5,95], sym='')
+    plt.yticks(np.arange(data.shape[0])+1, newGenii, size='xx-small')
+    plt.xlabel('Log10 Abundance')
+    plt.title('Genus -- Box and Whisker')
+    plt.savefig(os.path.join(baseDir, 'box and whisker.png'))  
     plt.close('all')
     
     plt.clf()
