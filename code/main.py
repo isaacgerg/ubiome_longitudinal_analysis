@@ -486,10 +486,15 @@ def ubiomeAnalysis():
             r.append(p[kk][k])
     r = np.reshape(r, (len(genii), N), order='F')   
     
+    # re order r
+    idx = np.flip(np.argsort(np.sum(r, axis=1)), axis=0)
+    r = r[idx, :]
+    genii = [genii[i] for i in idx.tolist()]    
+    
     plt.clf()
     plt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cmap('Blues', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); plt.colorbar()
     plt.yticks(np.arange(r.shape[0]), genii, size='xx-small')
-    plt.xlabel('Sample Number'); plt.grid(False)
+    plt.xlabel('Sample'); plt.grid(False)
     plt.xticks(np.arange(r.shape[1]), sampleNames, rotation = 'vertical', size='xx-small')
     plt.title('Genus Heatmap [Percent]')
     plt.savefig(os.path.join(baseDir, 'genus heatmap.png'))
@@ -498,7 +503,7 @@ def ubiomeAnalysis():
     plt.clf() 
     plt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cmap('afmhot_r', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); plt.colorbar()
     plt.yticks(np.arange(r.shape[0]), genii, size='xx-small')
-    plt.xlabel('Sample Number'); plt.grid(False)
+    plt.xlabel('Sample'); plt.grid(False)
     plt.xticks(np.arange(r.shape[1]), sampleNames, rotation = 'vertical', size='xx-small')
     plt.title('Genus Heatmap [Percent]')
     plt.savefig(os.path.join(baseDir, 'genus heatmap - alt colormap.png'))
@@ -747,6 +752,11 @@ def ubiomeAnalysis():
         for kk in species:
             r.append(p[kk][k])
     r = np.reshape(r, (len(species), N), order='F')   
+        
+    # re order r
+    idx = np.flip(np.argsort(np.sum(r, axis=1)), axis=0)
+    r = r[idx, :]
+    species = [species[i] for i in idx.tolist()]
     
     plt.clf() 
     plt.matshow(r, aspect='auto', cmap=matplotlib.cm.get_cmap('Blues', 9), norm=matplotlib.colors.LogNorm(vmin=0.1, vmax=100)); plt.colorbar()
