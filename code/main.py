@@ -258,6 +258,7 @@ def ubiomeAnalysis():
     
     # Get all applicable files
     fn = glob.glob(os.path.join(baseDir,'*.json'))
+    #fn = [r'C:\Users\idg101\Desktop\New folder\repo\ubiome_longitudinal_analysis\sample_data\55920.json', r'C:\Users\idg101\Desktop\New folder\repo\ubiome_longitudinal_analysis\sample_data\2017_0310_1.json']
     #fn += glob.glob(r'C:\Users\Isaac\Desktop\github\ubiome\ubiome_longitudinal_analysis\sample_data\*.json')
     
     # Sort files by time
@@ -502,6 +503,31 @@ def ubiomeAnalysis():
     plt.title('Genus Heatmap [Percent]')
     plt.savefig(os.path.join(baseDir, 'genus heatmap - alt colormap.png'))
     plt.close('all')
+    
+    # Find IBS identifying strains
+    clostridialesIdx = -1
+    bacteroidesIdx = -1
+    prevotellaIdx = -1
+    for idx, name in enumerate(genii):
+        if name.find('Clostridiales') > -1:
+            clostridialesIdx = idx
+        if name.find('Bacteroides') > -1:
+            bacteroidesIdx = idx
+        if name.find('Prevotella') > -1:
+            prevotellaIdx = idx
+    clos = r[clostridialesIdx, :]
+    bac = r[bacteroidesIdx, :]
+    prev = r[prevotellaIdx, :]
+    # Stack and normalize
+    mat = np.vstack((clos, bac, prev))
+    mat = mat / np.sum(mat, axis=0)
+    plt.clf()
+    fig = matplotlib.pyplot.gcf()
+    fig.set_size_inches(16,9)      
+    width = 0.35
+    plt.bar(np.arange(r.shape[1]), mat[0,:], width, color='red')
+    plt.bar(np.arange(r.shape[1]), mat[1,:], width, color='blue', bottom = mat[0,:])
+    
     
     # Boxplot
     plt.clf()
