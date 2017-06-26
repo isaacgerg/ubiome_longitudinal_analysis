@@ -509,6 +509,19 @@ def ubiomeAnalysis():
     plt.savefig(os.path.join(baseDir, 'genus heatmap - alt colormap.png'))
     plt.close('all')
     
+    plt.clf()
+    fig = matplotlib.pyplot.gcf()
+    fig.set_size_inches(9,16)        
+    tmp = r / r.max()
+    for k in range(25):
+        plt.subplot(25,1,k+1)
+        plt.semilogy(tmp[k,:])
+        plt.ylim(1e-3, 1)
+        plt.title(genii[k])
+    plt.savefig(os.path.join(baseDir, 'genus time plots.png'))
+    plt.close('all')
+    
+    
     # Find IBS identifying strains
     clostridialesIdx = -1
     bacteroidesIdx = -1
