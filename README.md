@@ -1,7 +1,5 @@
 # Ubiome Longitudinal Analysis
-Generates a set of plots showing ubiome data over time.
-
-NOTE: I updated to matplotlib 2.0 and have yet to change my matplotlibrc file.  So, some of the plots are not as pretty as they once were.
+Generates a set of plots showing ubiome data over time.  Click on any plot below to enlarge.
 
 ![Alt text](https://raw.githubusercontent.com/isaacgerg/ubiome_longitudinal_analysis/master/sample_data/genus%20heatmap.png)
 
@@ -17,3 +15,4 @@ NOTE: I updated to matplotlib 2.0 and have yet to change my matplotlibrc file.  
 
 ![Alt text](https://raw.githubusercontent.com/isaacgerg/ubiome_longitudinal_analysis/master/sample_data/Percentage%20of%20Probiotic%20Strains.png)
 
+![Alt text](https://raw.githubusercontent.com/isaacgerg/ubiome_longitudinal_analysis/master/sample_data/simpsons%20diversity%20index.png)
