@@ -3,8 +3,8 @@ Generates a set of plots showing ubiome data over time.
 
 NOTE: I updated to matplotlib 2.0 and have yet to change my matplotlibrc file.  So, some of the plots are not as pretty as they once were.
 
-Genus Distribution
-![Alt text](https://raw.githubusercontent.com/isaacgerg/ubiome_longitudinal_analysis/master/sample_data/box%20and%20whisker.png "Genus Distribution")
+Genus Heatmap
+![Alt text]("https://raw.githubusercontent.com/isaacgerg/ubiome_longitudinal_analysis/master/sample_data/genus heatmap.png")
 
 Genus Heatmap
 
