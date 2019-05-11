@@ -18,3 +18,5 @@ Generates a set of plots showing ubiome data over time.  Click on any plot below
 ![Alt text](https://raw.githubusercontent.com/isaacgerg/ubiome_longitudinal_analysis/master/results/simpsons%20diversity%20index.png)
 
 ![Alt test](https://raw.githubusercontent.com/isaacgerg/ubiome_longitudinal_analysis/master/results/Firmicutes%20to%20Bacteroidetes%20Ratio.png)
+
+![Alt test](https://raw.githubusercontent.com/isaacgerg/ubiome_longitudinal_analysis/master/results/pathogenic%20strains%20-%20stacked.png)
